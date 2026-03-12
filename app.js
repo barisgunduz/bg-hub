@@ -410,29 +410,60 @@
   }
 
   // Router
-  function navigate(view, appId) {
+  let suppressHash = false;
+
+  function buildHash(view, appId) {
+    if (appId) return `#/${view}/${appId}`;
+    if (view === "discover") return "#/";
+    return `#/${view}`;
+  }
+
+  function parseHash() {
+    const hash = location.hash.replace(/^#\/?/, "");
+    if (!hash) return { view: "discover", appId: null };
+    const parts = hash.split("/");
+    if (parts.length >= 2) return { view: parts[0], appId: parts[1] };
+    return { view: parts[0], appId: null };
+  }
+
+  function navigate(view, appId, fromHash) {
     if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
     const scroll = $("#contentScroll");
     scroll.scrollTop = 0;
 
+    if (view === "github") {
+      window.open(data.store.github, "_blank");
+      return;
+    }
+
     if (appId) {
       currentApp = appId;
+      currentView = view;
       scroll.innerHTML = renderAppDetail(appId);
     } else if (view === "discover") {
       currentApp = null;
       currentView = view;
       scroll.innerHTML = renderDiscover();
-    } else if (view === "github") {
-      window.open(data.store.github, "_blank");
-      return;
     } else {
       currentApp = null;
       currentView = view;
       scroll.innerHTML = renderCategory(view);
     }
 
+    if (!fromHash) {
+      suppressHash = true;
+      location.hash = buildHash(currentView, currentApp);
+      suppressHash = false;
+    }
+
     buildSidebar();
     bindEvents();
+  }
+
+  function onHashChange() {
+    if (suppressHash) return;
+    const { view, appId } = parseHash();
+    navigate(view || "discover", appId || null, true);
   }
 
   // Modal
@@ -635,7 +666,9 @@
     }
 
     buildSidebar();
-    navigate("discover");
+    window.addEventListener("hashchange", onHashChange);
+    const initial = parseHash();
+    navigate(initial.view || "discover", initial.appId || null);
     bindSidebar();
     bindSearch();
     bindKeyboard();
