@@ -67,7 +67,7 @@
       "github": "https://github.com/f/textream",
       "homepage": "https://textream.fka.dev",
       "language": "Swift",
-      "stars": 1971,
+      "stars": 1972,
       "forks": 135,
       "brew": "brew install f/textream/textream",
       "downloadUrl": "https://github.com/f/textream/releases/latest",
@@ -402,7 +402,7 @@
       "github": "https://github.com/f/appetit",
       "homepage": "https://apps.fka.dev",
       "language": "JavaScript",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "requirements": "Any modern browser",
       "features": [
