@@ -638,6 +638,23 @@ body {
   text-overflow: ellipsis;
 }
 
+.app-name-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.app-name-row .app-name {
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.app-name-row .app-owner-tag {
+  flex: 0 0 auto;
+}
+
 .app-subtitle {
   font-size: 13px;
   color: var(--text-secondary);
@@ -662,6 +679,12 @@ body {
   background: var(--meta-tag-bg);
   padding: 2px 8px;
   border-radius: 4px;
+}
+
+.app-owner-tag {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
 .get-btn {
@@ -1069,6 +1092,39 @@ body {
 
 .info-value a:hover {
   text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: transform var(--transition), border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.social-link:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.social-link svg {
+  width: 14px;
+  height: 14px;
 }
 
 .back-btn {
