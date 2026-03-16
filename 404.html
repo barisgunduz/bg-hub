@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting…</title>
+</head>
+<body>
+  <script>
+    (function () {
+      var path = window.location.pathname || "/";
+      var search = window.location.search || "";
+      var params = new URLSearchParams();
+      params.set("p", path);
+      if (search) params.set("q", search.replace(/^\?/, ""));
+      var target = "/?" + params.toString();
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://wvw.dev/apps.schema.json",
   "store": {
-    "name": "GM Hub",
+    "name": "BG Hub",
     "owner": "Barış Gündüz",
     "developer": "Barış Gündüz",
     "tagline": "My precious apps",
@@ -16,7 +16,7 @@
       "subtitle": "A little bit of everything, right in the middle."
     },
     {
-      "id": "ProTaskTimer",
+      "id": "protasktimer",
       "headline": "Track your work!",
       "title": "A task-based time tracking Chrome extension.",
       "subtitle": "Simplify task management and optimize your productivity with precise time tracking."
@@ -67,9 +67,9 @@
       "subtitle": "Small but Mighty Dev Resources.",
       "description": "A little bit of everything, right in the middle web tools, files, helpers etc...",
       "longDescription": "Teeny Tiny Web is a compact hub built around the idea that the best developer resources don’t need to be big or complicated to be useful. With the motto “Small but Mighty Dev Resources,” the platform brings together a little bit of everything - practical web tools, helpful utilities, handy files, and simple developer helpers - all in one place. Designed to sit right in the middle of everyday workflows, Teeny Tiny Web focuses on speed, simplicity, and usefulness, giving developers quick access to the small resources that make a big difference in daily development.",
-      "icon": "https://raw.githubusercontent.com/f/textream/master/Textream/Textream/Assets.xcassets/AppIcon.appiconset/icon_512x512.png",
+      "icon": "/icons/teenytinyweb-logo.png",
       "iconStyle": {
-        "scale": 1.3,
+        "scale": 1,
         "objectFit": "cover",
         "borderRadius": "22%"
       },
@@ -77,7 +77,7 @@
         "web",
         "productivity"
       ],
-      "platform": "web",
+      "platform": "Web",
       "owner": "Barış Gündüz",
       "price": "Free",
       "github": "https://github.com/barisgunduz/teeny-tiny-web",
@@ -97,7 +97,7 @@
         "Freebies: A collection of downloadable resources such as PDFs, templates, and more."
       ],
       "screenshots": [
-        "https://raw.githubusercontent.com/f/textream/master/docs/video.gif"
+        "/icons/teenytinyweb.png"
       ]
     },
     {
@@ -106,9 +106,9 @@
       "subtitle": "Small but Mighty Dev Resources.",
       "description": "Check Done Hub is a minimalist to-do list app that helps you stay organized with zero fuss.",
       "longDescription": "Check Done App is designed to be the simplest and most straightforward to-do list manager available. With Check Done Hub, you can effortlessly manage your tasks without any unnecessary complications. This extension provides a clean and intuitive interface, allowing you to focus solely on completing your tasks.",
-      "icon": "https://lh3.googleusercontent.com/SfmpqMgaaj-gHF4hBy7wSV3fZ1xw2aGccCB_onhbRQtyag6rCreYqwdjANjMwrPPyzZSLQum5smEWS8AMuRHLv2_Dw=s60",
+      "icon": "/icons/checkdonehub-logo.png",
       "iconStyle": {
-        "scale": 1.3,
+        "scale": 1,
         "objectFit": "cover",
         "borderRadius": "22%"
       },
@@ -116,7 +116,7 @@
         "chrome-extensions",
         "productivity"
       ],
-      "platform": "web",
+      "platform": "Chrome",
       "owner": "Barış Gündüz",
       "price": "Free",
       "github": "https://github.com/Gunduz-Medya/checkdonehub",
@@ -134,7 +134,82 @@
         "Minimalist Design: Focus on what matters most with a clutter-free, distraction-free design."
       ],
       "screenshots": [
-        "https://lh3.googleusercontent.com/uUNF33_HjS1ZekaoF67I0mYhRr__Qm__MQuGXAWl89sh_tsfEFRzlZt7lWsR5Xo8vRXahqvNyaysB1Re3ZeRPv4-=s1280-w1280-h800"
+        "/icons/checkdonehub.png"
+      ]
+    },
+    {
+      "id": "protasktimer",
+      "name": "Pro Task Timer",
+      "subtitle": "A task-based time tracking Chrome extension.",
+      "description": "Simplify task management and optimize your productivity with precise time tracking.",
+      "longDescription": "ProTaskTimer is a user-friendly Chrome extension designed to help you efficiently track time spent on tasks, manage your daily workload, and boost productivity. With ProTaskTimer, you can effortlessly monitor your progress and export daily task reports with a single click.",
+      "icon": "/icons/protasktimer-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "chrome-extensions",
+        "productivity"
+      ],
+      "platform": "Chrome",
+      "owner": "Barış Gündüz",
+      "price": "Free",
+      "github": "https://github.com/Gunduz-Medya/protasktimer",
+      "homepage": "https://chromewebstore.google.com/detail/protasktimer/ldkggagkkfagekoodligfapmnjnokmli",
+      "language": "React JS",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "Any modern browser",
+      "features": [
+        "Task-Based Tracking: Easily start and stop task timers to track your productivity with precision.",
+        "Persistent Task List: Your tasks and timers are saved automatically, even when you close the popup or browser.",
+        "Export Daily Reports: Download your daily task summary as a CSV file for easy reporting and analysis.",
+        "Minimalist Design: Clean and intuitive interface, ensuring focus on productivity without unnecessary distractions.",
+        "Clear Task Management: Quickly clear completed tasks and start fresh with a single click."
+      ],
+      "screenshots": [
+        "/icons/protasktimer.png"
+      ]
+    },
+    {
+      "id": "passaroo",
+      "name": "Passaroo - Password Generator",
+      "subtitle": "Simplify the process of creating strong and reliable passwords.",
+      "description": "easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
+      "longDescription": "Passaroo is a secure and customizable password generator extension designed to simplify the process of creating strong and reliable passwords. With Passaroo, you can easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
+      "icon": "/icons/passaroo-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "chrome-extensions",
+        "productivity"
+      ],
+      "platform": "Chrome",
+      "owner": "Barış Gündüz",
+      "price": "Free",
+      "github": "https://github.com/Gunduz-Medya/passaroo",
+      "homepage": "https://chromewebstore.google.com/detail/passaroo-password-generat/pgfpklgdcmbiijdddcdddiieiobicmek",
+      "language": "React JS",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "Any modern browser",
+      "features": [
+        "Customizable Password Length: Choose the length of your password, from 6 to 50 characters.",
+        "Character Set Options: Select the inclusion of uppercase letters, numbers, and special characters to enhance password strength.",
+        "Instant Copy to Clipboard: Generate and copy your password to the clipboard with just a click.",
+        "Minimalist Design: A simple, elegant interface that allows you to focus solely on creating secure passwords without distractions."
+      ],
+      "screenshots": [
+        "/icons/passaroo.png"
       ]
     },
     {
@@ -143,17 +218,15 @@
       "subtitle": "Healthy lifestyle content in Turkish",
       "description": "A content platform focused on healthy lifestyle topics, providing articles, tips, and resources in Turkish.",
       "longDescription": "Vaktinde Ye is a content platform dedicated to promoting a healthy lifestyle through informative articles, practical tips, and valuable resources. The platform covers a wide range of topics including nutrition, fitness, mental well-being, and overall wellness. All content is provided in Turkish, making it accessible to a broad audience in Turkey. Whether you're looking for healthy recipes, workout routines, or advice on maintaining mental health, Vaktinde Ye offers a comprehensive resource for anyone interested in improving their lifestyle.",
-      "icon": "https://raw.githubusercontent.com/f/prompts.chat/main/public/logo-dark.svg",
+      "icon": "/icons/vaktindeye-logo.jpeg",
       "iconStyle": {
-        "scale": 0.9,
-        "objectFit": "contain",
-        "bgColor": "#000000",
-        "padding": "18%"
+        "scale": 1,
+        "objectFit": "contain"
       },
       "category": [
         "content"
       ],
-      "platform": "Web",
+      "platform": "Content Creation",
       "owner": "Barış Gündüz",
       "price": "Free",
       "github": "",
@@ -163,19 +236,19 @@
       "forks": 0,
       "requirements": "Any modern browser",
       "features": [
-        "151K+ GitHub stars",
-        "Community-driven prompt collection",
-        "Works with ChatGPT, Claude, Gemini",
-        "Self-hostable with full privacy",
-        "Built with Next.js and TypeScript",
-        "Open source and free",
-        "Active community contributions"
+        "Healthy eating guides and practical nutrition tips",
+        "Science-based fitness and wellness content",
+        "Daily motivation for a disciplined lifestyle",
+        "Easy-to-follow meal and habit suggestions",
+        "Actionable advice for sustainable health habits",
+        "Community-focused healthy living inspiration",
+        "Simple, practical, and realistic wellness strategies"
       ],
       "socials": {
         "instagram": "https://www.instagram.com/vaktindeye"
       },
       "screenshots": [
-        "https://raw.githubusercontent.com/f/prompts.chat/main/public/og.png"
+        "/icons/vaktindeye.png"
       ]
     },
     {

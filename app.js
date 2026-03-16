@@ -132,6 +132,28 @@
     return app.owner || app.developer || data.store.owner || data.store.developer || "";
   }
 
+  function isTributeApp(app) {
+    return getOwner(app) !== "Barış Gündüz";
+  }
+
+  function isPrimaryApp(app) {
+    return !isTributeApp(app);
+  }
+
+  function appBelongsToCategory(app, categoryId) {
+    if (categoryId === "tribute") return isTributeApp(app);
+    if (isTributeApp(app)) return false;
+    return app.category.includes(categoryId);
+  }
+
+  function getPrimaryApps() {
+    return data.apps.filter(isPrimaryApp);
+  }
+
+  function getTributeApps() {
+    return data.apps.filter(isTributeApp);
+  }
+
   function iconStyle(app) {
     const s = app.iconStyle || {};
     const parts = [];
@@ -168,6 +190,17 @@
 
   function getBuyUrl(app) {
     return app.buyUrl || app.homepage || app.github;
+  }
+
+  function hasGithubLink(app) {
+    return typeof app.github === "string" && app.github.trim() !== "";
+  }
+
+  function shouldShowGithubStat(app, key) {
+    const value = app[key];
+    if (value === undefined) return false;
+    if (value > 0) return true;
+    return hasGithubLink(app);
   }
 
   function getButtonLabel(app) {
@@ -238,7 +271,7 @@
 
     const categories = (data.categories || [])
       .filter((cat) => cat.id !== "all")
-      .filter((cat) => data.apps.some((app) => app.category.includes(cat.id)))
+      .filter((cat) => data.apps.some((app) => appBelongsToCategory(app, cat.id)))
       .map((cat) => ({
         id: cat.id,
         name: cat.name,
@@ -282,13 +315,14 @@
 
   // Discover Page
   function renderDiscover() {
-    const apps = data.apps;
-    const featuredList = Array.isArray(data.featured) ? data.featured : [data.featured];
+    const apps = getPrimaryApps();
+    const tributeApps = getTributeApps();
+    const featuredList = (Array.isArray(data.featured) ? data.featured : [data.featured])
+      .filter((item) => item && apps.some((app) => app.id === item.id));
 
     const macosApps = apps.filter((a) => a.category.includes("macos"));
     const devApps = apps.filter((a) => a.category.includes("developer-tools"));
     const gameApps = apps.filter((a) => a.category.includes("games"));
-    const tributeApps = apps.filter((a) => a.category.includes("tribute"));
 
     const dots = featuredList.length > 1
       ? `<div class="carousel-dots">${featuredList.map((_, i) => `<button class="carousel-dot${i === 0 ? " active" : ""}" data-slide="${i}"></button>`).join("")}</div>`
@@ -381,7 +415,7 @@
   // Category Page
   function renderCategory(categoryId) {
     const cat = data.categories.find((c) => c.id === categoryId);
-    const apps = data.apps.filter((a) => a.category.includes(categoryId));
+    const apps = data.apps.filter((a) => appBelongsToCategory(a, categoryId));
 
     if (apps.length === 0) {
       return `
@@ -421,7 +455,7 @@
               <button class="app-detail-get-btn${isPaidApp(app) ? " buy-btn" : ""}" data-action="get" data-app="${app.id}">
                 ${getButtonLabel(app)}
               </button>
-              ${app.github ? `
+              ${hasGithubLink(app) ? `
               <a href="${app.github}" target="_blank" rel="noopener" class="github-link">
                 ${icons.github} View on GitHub
               </a>` : ""}
@@ -430,8 +464,8 @@
         </div>
 
         <div class="app-detail-stats">
-          ${app.stars !== undefined ? `<div class="stat"><div class="stat-value">${formatNumber(app.stars)}</div><div class="stat-label">Stars</div></div>` : ""}
-          ${app.forks !== undefined ? `<div class="stat"><div class="stat-value">${formatNumber(app.forks)}</div><div class="stat-label">Forks</div></div>` : ""}
+          ${shouldShowGithubStat(app, "stars") ? `<div class="stat"><div class="stat-value">${formatNumber(app.stars)}</div><div class="stat-label">Stars</div></div>` : ""}
+          ${shouldShowGithubStat(app, "forks") ? `<div class="stat"><div class="stat-value">${formatNumber(app.forks)}</div><div class="stat-label">Forks</div></div>` : ""}
           <div class="stat"><div class="stat-value">${app.price}</div><div class="stat-label">Price</div></div>
           <div class="stat"><div class="stat-value">${app.platform}</div><div class="stat-label">Platform</div></div>
           <div class="stat"><div class="stat-value">${app.language}</div><div class="stat-label">Language</div></div>
@@ -502,7 +536,7 @@
               <span class="info-value">${app.price}</span>
             </div>
             ${renderSocials(app)}
-            ${app.github ? `
+            ${hasGithubLink(app) ? `
             <div class="info-item">
               <span class="info-label">Source Code</span>
               <span class="info-value"><a href="${app.github}" target="_blank" rel="noopener">${app.github.replace("https://github.com/", "")}</a></span>
@@ -520,7 +554,7 @@
   // Search results
   function renderSearch(query) {
     const q = query.toLowerCase();
-    const results = data.apps.filter(
+    const results = getPrimaryApps().filter(
       (a) =>
         a.name.toLowerCase().includes(q) ||
         a.subtitle.toLowerCase().includes(q) ||
@@ -546,23 +580,38 @@
   }
 
   // Router
-  let suppressHash = false;
+  let suppressHistory = false;
 
-  function buildHash(view, appId) {
-    if (appId) return `#/${view}/${appId}`;
-    if (view === "discover") return "#/";
-    return `#/${view}`;
+  function buildPath(view, appId) {
+    if (appId) return `/${view}/${appId}`;
+    if (view === "discover") return "/";
+    return `/${view}`;
   }
 
-  function parseHash() {
-    const hash = location.hash.replace(/^#\/?/, "");
-    if (!hash) return { view: "discover", appId: null };
-    const parts = hash.split("/");
+  function normalizePath(pathname) {
+    return pathname.replace(/\/+$/, "") || "/";
+  }
+
+  function parsePath(pathname) {
+    const cleanPath = normalizePath(pathname).replace(/^\/+/, "");
+    if (!cleanPath) return { view: "discover", appId: null };
+    const parts = cleanPath.split("/");
     if (parts.length >= 2) return { view: parts[0], appId: parts[1] };
     return { view: parts[0], appId: null };
   }
 
-  function navigate(view, appId, fromHash) {
+  function migrateLegacyHashRoute() {
+    const hash = location.hash.replace(/^#\/?/, "");
+    if (!hash) return null;
+    const parts = hash.split("/");
+    const nextView = parts[0] || "discover";
+    const nextAppId = parts[1] || null;
+    const nextPath = buildPath(nextView, nextAppId);
+    history.replaceState({}, "", nextPath + location.search);
+    return { view: nextView, appId: nextAppId };
+  }
+
+  function navigate(view, appId, fromHistory) {
     if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
     const scroll = $("#contentScroll");
     scroll.scrollTop = 0;
@@ -586,10 +635,10 @@
       scroll.innerHTML = renderCategory(view);
     }
 
-    if (!fromHash) {
-      suppressHash = true;
-      location.hash = buildHash(currentView, currentApp);
-      suppressHash = false;
+    if (!fromHistory) {
+      suppressHistory = true;
+      history.pushState({}, "", buildPath(currentView, currentApp));
+      suppressHistory = false;
     }
 
     buildSidebar();
@@ -597,9 +646,9 @@
     updateMobileTopbar();
   }
 
-  function onHashChange() {
-    if (suppressHash) return;
-    const { view, appId } = parseHash();
+  function onPopState() {
+    if (suppressHistory) return;
+    const { view, appId } = parsePath(location.pathname);
     navigate(view || "discover", appId || null, true);
   }
 
@@ -882,8 +931,8 @@
     }
 
     buildSidebar();
-    window.addEventListener("hashchange", onHashChange);
-    const initial = parseHash();
+    window.addEventListener("popstate", onPopState);
+    const initial = migrateLegacyHashRoute() || parsePath(location.pathname);
     navigate(initial.view || "discover", initial.appId || null);
     bindSidebar();
     bindSearch();

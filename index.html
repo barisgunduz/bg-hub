@@ -9,6 +9,16 @@
   <link rel="canonical" href="https://apps.fka.dev">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="stylesheet" href="style.css?v=20260316">
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var path = params.get("p");
+      if (!path) return;
+      var search = params.get("q");
+      var target = path + (search ? "?" + search : "");
+      window.history.replaceState({}, "", target);
+    })();
+  </script>
 </head>
 <body>
   <div class="app-store">

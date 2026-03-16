@@ -36,10 +36,12 @@ Appétit is a beautiful, browsable app catalog that looks and feels like the App
 ```bash
 git clone https://github.com/f/appetit.git
 cd appetit
-python3 -m http.server 8080
+npx serve -s . -l 8080
 ```
 
 Open [localhost:8080](http://localhost:8080) and you're running.
+
+Use an SPA-aware static server so clean URLs like `/web` resolve correctly on refresh and direct visits.
 
 ## Make It Yours
 
