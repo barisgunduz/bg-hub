@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="logo.svg" width="128" height="128" alt="Appétit">
+  <img src="logo.svg" width="128" height="128" alt="BG Hub (Appétit)">
 </p>
 
-<h1 align="center">Appétit</h1>
+<h1 align="center">BG Hub (Appétit)</h1>
 
 <p align="center">
-  <em>Bon appétit for apps.</em><br>
+  <em>My precious apps.</em><br>
   An App Store-inspired catalog for your projects — powered by a single JSON file.
 </p>
 
@@ -17,7 +17,7 @@
 
 ---
 
-Appétit is a beautiful, browsable app catalog that looks and feels like the Apple App Store. It's built entirely with vanilla HTML, CSS, and JS — no frameworks, no build step, no dependencies. Just edit `apps.json` and deploy.
+BG Hub (Appétit) is a beautiful, browsable app catalog that looks and feels like the Apple App Store. It's built entirely with vanilla HTML, CSS, and JS — no frameworks, no build step, no dependencies. Just edit `apps.json` and deploy.
 
 ## Features
 
@@ -34,8 +34,8 @@ Appétit is a beautiful, browsable app catalog that looks and feels like the App
 ## Quick Start
 
 ```bash
-git clone https://github.com/f/appetit.git
-cd appetit
+git clone https://github.com/barisgunduz/bg-hub.git
+cd bg-hub
 npx serve -s . -l 8080
 ```
 
