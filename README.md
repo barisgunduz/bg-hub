@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://apps.fka.dev">Live Demo</a> ·
+  <a href="https://hub.barisgunduz.com">Live Demo</a> ·
   <a href="#quick-start">Quick Start</a> ·
   <a href="#make-it-yours">Make It Yours</a>
 </p>
 
 ---
 
-BG Hub (Appétit) is a beautiful, browsable app catalog that looks and feels like the Apple App Store. It's built entirely with vanilla HTML, CSS, and JS — no frameworks, no build step, no dependencies. Just edit `apps.json` and deploy.
+BG Hub (<a href="https://github.com/f/appetit">Originally Appétit</a>) is a beautiful, browsable app catalog that looks and feels like the Apple App Store. It's built entirely with vanilla HTML, CSS, and JS — no frameworks, no build step, no dependencies. Just edit `apps.json` and deploy.
 
 ## Features
 
