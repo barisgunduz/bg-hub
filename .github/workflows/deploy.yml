@@ -13,22 +13,17 @@ jobs:
       - name: Repo çek
         uses: actions/checkout@v4
 
+      - name: SSH ayarla
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
       - name: Eski dosyaları sil
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            rm -rf /var/www/hub/*
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "rm -rf /var/www/hub/*"
 
       - name: Dosyaları gönder
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: |
-            *
-            !.github
-          target: "/var/www/hub"
+        run: |
+          scp -r ./* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/hub
