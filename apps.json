@@ -10,16 +10,16 @@
   },
   "featured": [
     {
+      "id": "moviepartx",
+      "headline": "Magical World of Cinema",
+      "title": "Unlimited movie and series content!",
+      "subtitle": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world."
+    },
+    {
       "id": "teenytinyweb",
       "headline": "Teeny Tiny Web",
       "title": "Small but Mighty Dev Resources.",
       "subtitle": "A little bit of everything, right in the middle."
-    },
-    {
-      "id": "protasktimer",
-      "headline": "Track your work!",
-      "title": "A task-based time tracking Chrome extension.",
-      "subtitle": "Simplify task management and optimize your productivity with precise time tracking."
     }
   ],
   "categories": [
@@ -249,6 +249,48 @@
       },
       "screenshots": [
         "/icons/vaktindeye.png"
+      ]
+    },
+    {
+      "id": "moviepartx",
+      "name": "Movie Part X",
+      "subtitle": "Movie and series content in English",
+      "description": "A content platform focused on movies and TV series, providing summaries, trivia, and recommendations in English.",
+      "longDescription": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world. The platform covers a wide range of content including movie summaries, character insights, behind-the-scenes facts, and curated watch recommendations. All content is presented in English, making it accessible to a global audience of movie enthusiasts. Whether you're searching for your next binge-worthy series, revisiting classic films, or discovering interesting details about your favorite actors and stories, Movie Part X offers a comprehensive resource for anyone passionate about cinema and television.",
+      "icon": "/icons/moviepartx-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "contain"
+      },
+      "category": [
+        "content"
+      ],
+      "platform": "Content Creation",
+      "owner": "Barış Gündüz",
+      "price": "Free",
+      "github": "",
+      "homepage": "https://instagram.com/moviepartx",
+      "language": "Instagram",
+      "stars": 0,
+      "forks": 0,
+      "requirements": "Any modern browser",
+      "features": [
+        "Concise movie and TV series summaries",
+        "Interesting trivia and behind-the-scenes facts",
+        "Then vs now and cast comparison content",
+        "Curated watchlists across genres and eras",
+        "Quick recommendations for your next watch",
+        "Actor spotlights and filmography highlights",
+        "Simple, engaging, and easy-to-consume cinema content"
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/moviepartx",
+        "youtube": "https://www.youtube.com/@moviepartx",
+        "tiktok": "https://www.tiktok.com/@moviepartx"
+      },
+      "screenshots": [
+        "/icons/moviepartxinsta.png",
+        "/icons/moviepartxyoutube.png"
       ]
     },
     {
