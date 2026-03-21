@@ -196,6 +196,10 @@
     return typeof app.github === "string" && app.github.trim() !== "";
   }
 
+  function isContentAppWithoutGithub(app) {
+    return Array.isArray(app.category) && app.category.includes("content") && !hasGithubLink(app);
+  }
+
   function shouldShowGithubStat(app, key) {
     const value = app[key];
     if (value === undefined) return false;
@@ -438,6 +442,7 @@
   function renderAppDetail(appId) {
     const app = data.apps.find((a) => a.id === appId);
     if (!app) return `<div class="empty-state"><h3>App not found</h3></div>`;
+    const hideContentMeta = isContentAppWithoutGithub(app);
 
     return `
       <div class="app-detail">
@@ -463,13 +468,14 @@
           </div>
         </div>
 
+        ${hideContentMeta ? "" : `
         <div class="app-detail-stats">
           ${shouldShowGithubStat(app, "stars") ? `<div class="stat"><div class="stat-value">${formatNumber(app.stars)}</div><div class="stat-label">Stars</div></div>` : ""}
           ${shouldShowGithubStat(app, "forks") ? `<div class="stat"><div class="stat-value">${formatNumber(app.forks)}</div><div class="stat-label">Forks</div></div>` : ""}
           <div class="stat"><div class="stat-value">${app.price}</div><div class="stat-label">Price</div></div>
           <div class="stat"><div class="stat-value">${app.platform}</div><div class="stat-label">Platform</div></div>
           <div class="stat"><div class="stat-value">${app.language}</div><div class="stat-label">Language</div></div>
-        </div>
+        </div>`}
 
         ${app.screenshots && app.screenshots.length > 0 ? `
         <div class="detail-section">
@@ -527,6 +533,7 @@
               <span class="info-label">Compatibility</span>
               <span class="info-value">${app.requirements}</span>
             </div>
+            ${hideContentMeta ? "" : `
             <div class="info-item">
               <span class="info-label">Language</span>
               <span class="info-value">${app.language}</span>
@@ -534,7 +541,7 @@
             <div class="info-item">
               <span class="info-label">Price</span>
               <span class="info-value">${app.price}</span>
-            </div>
+            </div>`}
             ${renderSocials(app)}
             ${hasGithubLink(app) ? `
             <div class="info-item">
