@@ -315,8 +315,8 @@
       "github": "https://github.com/f/prompts.chat",
       "homepage": "https://prompts.chat",
       "language": "TypeScript",
-      "stars": 160053,
-      "forks": 20955,
+      "stars": 160134,
+      "forks": 20957,
       "requirements": "Any modern browser",
       "features": [
         "151K+ GitHub stars",
@@ -351,7 +351,7 @@
       "homepage": "https://apps.fka.dev",
       "language": "JavaScript",
       "stars": 39,
-      "forks": 9,
+      "forks": 8,
       "requirements": "Any modern browser",
       "features": [
         "Apple App Store-inspired UI",
