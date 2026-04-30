@@ -315,8 +315,8 @@
       "github": "https://github.com/f/prompts.chat",
       "homepage": "https://prompts.chat",
       "language": "TypeScript",
-      "stars": 153242,
-      "forks": 20165,
+      "stars": 161176,
+      "forks": 21050,
       "requirements": "Any modern browser",
       "features": [
         "151K+ GitHub stars",
@@ -350,7 +350,7 @@
       "github": "https://github.com/f/appetit",
       "homepage": "https://apps.fka.dev",
       "language": "JavaScript",
-      "stars": 33,
+      "stars": 40,
       "forks": 8,
       "requirements": "Any modern browser",
       "features": [
@@ -385,7 +385,7 @@
       "github": "https://github.com/f/wvw.dev-app",
       "homepage": "https://wvw.dev",
       "language": "Rust",
-      "stars": 5,
+      "stars": 7,
       "forks": 0,
       "brew": "brew install f/tap/wvw",
       "downloadUrl": "https://github.com/f/wvw.dev-app/releases/latest",
