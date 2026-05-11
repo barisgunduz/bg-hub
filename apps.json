@@ -5,8 +5,10 @@
     "owner": "Barış Gündüz",
     "developer": "Barış Gündüz",
     "tagline": "My precious apps",
-    "url": "https://apps.barisgunduz.com",
-    "github": "https://github.com/barisgunduz"
+    "url": "https://hub.barisgunduz.com",
+    "github": "https://github.com/barisgunduz",
+    "linkedin": "https://www.linkedin.com/in/barisgunduz/",
+    "medium": "https://barisgunduz.medium.com/"
   },
   "featured": [
     {
@@ -54,10 +56,6 @@
     {
       "id": "content",
       "name": "Content Creation"
-    },
-    {
-      "id": "tribute",
-      "name": "Tribute"
     }
   ],
   "apps": [
@@ -292,112 +290,6 @@
         "/icons/moviepartxinsta.png",
         "/icons/moviepartxyoutube.png"
       ]
-    },
-    {
-      "id": "prompts-chat",
-      "name": "Prompts.chat",
-      "subtitle": "Community Prompt Collection",
-      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "longDescription": "The largest community-driven prompt collection with over 151K GitHub stars. Originally known as Awesome ChatGPT Prompts, now evolved into a full web application. Browse, search, and contribute prompts for ChatGPT, Claude, Gemini, and other AI models. Features include community contributions, prompt categories, and the ability to self-host for your organization with complete privacy. Built with Next.js and TypeScript.",
-      "icon": "https://raw.githubusercontent.com/f/prompts.chat/main/public/logo-dark.svg",
-      "iconStyle": {
-        "scale": 0.9,
-        "objectFit": "contain",
-        "bgColor": "#000000",
-        "padding": "18%"
-      },
-      "category": [
-        "tribute"
-      ],
-      "platform": "Web",
-      "owner": "Fatih Kadir Akın",
-      "price": "Free",
-      "github": "https://github.com/f/prompts.chat",
-      "homepage": "https://prompts.chat",
-      "language": "TypeScript",
-      "stars": 153454,
-      "forks": 20185,
-      "requirements": "Any modern browser",
-      "features": [
-        "151K+ GitHub stars",
-        "Community-driven prompt collection",
-        "Works with ChatGPT, Claude, Gemini",
-        "Self-hostable with full privacy",
-        "Built with Next.js and TypeScript",
-        "Open source and free",
-        "Active community contributions"
-      ],
-      "screenshots": [
-        "https://raw.githubusercontent.com/f/prompts.chat/main/public/og.png"
-      ]
-    },
-    {
-      "id": "appetit",
-      "name": "Appétit",
-      "subtitle": "Bon Appétit for Apps",
-      "description": "An Apple App Store-inspired catalog of free, tiny apps built with agentic engineering and vibecoding. Pure HTML/CSS/JS — no frameworks, no build step.",
-      "longDescription": "Appétit is an open-source, JSON-driven app store clone that showcases your projects in a beautiful, browsable catalog. Features a dark/light theme, sidebar navigation, featured carousel, app detail pages with screenshots, brew/npx install modals, instant search, and GitHub star counts. All content lives in a single apps.json file — edit it and deploy. Built entirely with vanilla HTML, CSS, and JS using agentic engineering and vibecoding. No frameworks, no build step, deploys anywhere as static files.",
-      "icon": "https://raw.githubusercontent.com/f/appetit/master/logo.svg",
-      "iconStyle": {
-        "objectFit": "cover"
-      },
-      "category": [
-        "tribute"
-      ],
-      "platform": "Web",
-      "owner": "Fatih Kadir Akın",
-      "price": "Free",
-      "github": "https://github.com/f/appetit",
-      "homepage": "https://apps.fka.dev",
-      "language": "JavaScript",
-      "stars": 33,
-      "forks": 8,
-      "requirements": "Any modern browser",
-      "features": [
-        "Apple App Store-inspired UI",
-        "JSON-driven — all content from apps.json",
-        "Dark and light theme with system preference",
-        "Featured carousel, app cards, detail pages",
-        "Brew / npx install modals with clipboard copy",
-        "Zero dependencies — pure HTML/CSS/JS",
-        "Built with agentic engineering and vibecoding"
-      ],
-      "screenshots": []
-    },
-    {
-      "id": "wvw-desktop",
-      "name": "World Vibe Web",
-      "subtitle": "The distributed app store, on your desktop",
-      "description": "A native desktop app for wvw.dev — browse, discover, and install vibe-coded open-source apps from across GitHub without opening a browser.",
-      "longDescription": "World Vibe Web desktop brings the full wvw.dev experience to your menu bar. Browse the community-curated catalog of open-source apps, read reviews, view screenshots, and install via Homebrew or direct download — all from a native window with macOS title bar integration. External links open in your default browser. Built with Tauri and Rust for a lightweight, fast experience. Available for macOS (Apple Silicon & Intel), Windows, and Linux.",
-      "icon": "https://raw.githubusercontent.com/f/wvw.dev/master/logo.png",
-      "iconStyle": {
-        "scale": 1.3,
-        "objectFit": "cover",
-        "borderRadius": "22%"
-      },
-      "category": [
-        "tribute"
-      ],
-      "platform": "macOS",
-      "owner": "Fatih Kadir Akın",
-      "price": "Free",
-      "github": "https://github.com/f/wvw.dev-app",
-      "homepage": "https://wvw.dev",
-      "language": "Rust",
-      "stars": 5,
-      "forks": 0,
-      "brew": "brew install f/tap/wvw",
-      "downloadUrl": "https://github.com/f/wvw.dev-app/releases/latest",
-      "requirements": "macOS 10.15+, Windows 10+, or Linux",
-      "features": [
-        "Native desktop app powered by Tauri",
-        "Browse the full wvw.dev catalog",
-        "Available for macOS, Windows, and Linux",
-        "Lightweight — no Electron, built with Rust",
-        "Auto-updated from wvw.dev"
-      ],
-      "screenshots": []
     }
   ]
 }

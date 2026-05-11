@@ -25,8 +25,9 @@
     mobile: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>`,
     content: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/><path d="M15.5 3v5l-2-1.4L11.5 8V3"/></svg>`,
     productivity: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`,
-    tribute: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-3.9-8.5-8.1C1.8 9.3 4 5.5 7.8 5.5c1.8 0 3.1.8 4.2 2.2 1.1-1.4 2.4-2.2 4.2-2.2 3.8 0 6 3.8 4.3 7.4C18.5 17.1 12 21 12 21z"/><path d="M9 4.5h6"/></svg>`,
     github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
+    linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.9 1.96 1.96 0 0 0 5.25 3zM20.44 13.04c0-3.46-1.85-5.07-4.31-5.07-1.99 0-2.88 1.1-3.38 1.87V8.5H9.38c.05.89 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.67.9-1.36 1.95-1.36 1.38 0 1.93 1.02 1.93 2.52V20h3.38v-6.96z"/></svg>`,
+    medium: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12c0 3.45-2.78 6.25-6.2 6.25S1.13 15.45 1.13 12s2.78-6.25 6.2-6.25 6.21 2.8 6.21 6.25zM20.34 12c0 3.25-1.39 5.88-3.1 5.88s-3.1-2.63-3.1-5.88 1.39-5.88 3.1-5.88 3.1 2.63 3.1 5.88zM23.13 12c0 2.91-.49 5.27-1.09 5.27s-1.09-2.36-1.09-5.27.49-5.27 1.09-5.27 1.09 2.36 1.09 5.27z"/></svg>`,
   };
 
   function fallbackCategoryIcon() {
@@ -44,7 +45,8 @@
     instagram: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>`,
     youtube: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.1-.4-4.6a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.5.4A3 3 0 0 0 1.4 7.4C1 8.9 1 12 1 12s0 3.1.4 4.6a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.5-.4a3 3 0 0 0 2.1-2.1C23 15.1 23 12 23 12z"/><path d="M10 15.5v-7l6 3.5-6 3.5z" fill="#fff"/></svg>`,
     tiktok: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2c.4 1.9 1.5 3.4 3.5 4.1v3a7.2 7.2 0 0 1-3.5-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a2.9 2.9 0 1 0 1.9 2.8V2h3.2z"/></svg>`,
-    linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.9 1.96 1.96 0 0 0 5.25 3zM20.44 13.04c0-3.46-1.85-5.07-4.31-5.07-1.99 0-2.88 1.1-3.38 1.87V8.5H9.38c.05.89 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.67.9-1.36 1.95-1.36 1.38 0 1.93 1.02 1.93 2.52V20h3.38v-6.96z"/></svg>`,
+    linkedin: icons.linkedin,
+    medium: icons.medium,
     discord: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.37A16.9 16.9 0 0 0 16.1 3l-.2.4a15.5 15.5 0 0 1 3.8 1.8 12 12 0 0 0-3.5-1.7 11.8 11.8 0 0 0-4.2-.4 12 12 0 0 0-4.1.4A12 12 0 0 0 4.4 5.2 15.4 15.4 0 0 1 8.1 3.4L8 3A16.8 16.8 0 0 0 3.7 4.37C1.1 8.2.4 11.95.7 15.65A17 17 0 0 0 5.8 18l1.1-1.8c-.6-.2-1.2-.5-1.7-.8.1.1.3.2.4.2 3.2 1.5 6.8 1.5 10 0l.4-.2c-.5.3-1.1.6-1.7.8l1.1 1.8a17 17 0 0 0 5.1-2.35c.4-4.3-.7-8.02-2.2-11.28zM9.55 13.4c-.97 0-1.76-.9-1.76-2s.78-2 1.76-2c.98 0 1.77.9 1.76 2 0 1.1-.78 2-1.76 2zm4.9 0c-.97 0-1.76-.9-1.76-2s.78-2 1.76-2c.98 0 1.77.9 1.76 2 0 1.1-.78 2-1.76 2z"/></svg>`,
     twitch: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 2 2 6v14h5v3l3-3h4l8-8V2H4zm16 9-4 4h-4l-3 3v-3H5V4h15v7z"/><path d="M13 7h2v5h-2zM17 7h2v5h-2z" fill="#fff"/></svg>`,
   };
@@ -132,26 +134,8 @@
     return app.owner || app.developer || data.store.owner || data.store.developer || "";
   }
 
-  function isTributeApp(app) {
-    return getOwner(app) !== "Barış Gündüz";
-  }
-
-  function isPrimaryApp(app) {
-    return !isTributeApp(app);
-  }
-
   function appBelongsToCategory(app, categoryId) {
-    if (categoryId === "tribute") return isTributeApp(app);
-    if (isTributeApp(app)) return false;
     return app.category.includes(categoryId);
-  }
-
-  function getPrimaryApps() {
-    return data.apps.filter(isPrimaryApp);
-  }
-
-  function getTributeApps() {
-    return data.apps.filter(isTributeApp);
   }
 
   function iconStyle(app) {
@@ -275,7 +259,7 @@
 
     const categories = (data.categories || [])
       .filter((cat) => cat.id !== "all")
-      .filter((cat) => data.apps.some((app) => appBelongsToCategory(app, cat.id)))
+      .filter((cat) => cat.id === "mobile" || data.apps.some((app) => appBelongsToCategory(app, cat.id)))
       .map((cat) => ({
         id: cat.id,
         name: cat.name,
@@ -291,6 +275,12 @@
     html += `<div class="nav-separator"></div>`;
     html += `<div class="nav-item" data-view="github">
       <span class="nav-icon">${icons.github}</span>GitHub
+    </div>`;
+    html += `<div class="nav-item" data-view="linkedin">
+      <span class="nav-icon">${icons.linkedin}</span>LinkedIn
+    </div>`;
+    html += `<div class="nav-item" data-view="medium">
+      <span class="nav-icon">${icons.medium}</span>Medium
     </div>`;
 
     nav.innerHTML = html;
@@ -319,8 +309,7 @@
 
   // Discover Page
   function renderDiscover() {
-    const apps = getPrimaryApps();
-    const tributeApps = getTributeApps();
+    const apps = data.apps;
     const featuredList = (Array.isArray(data.featured) ? data.featured : [data.featured])
       .filter((item) => item && apps.some((app) => app.id === item.id));
 
@@ -399,16 +388,6 @@
         </div>
         <div class="app-list">
           ${gameApps.map((a) => appRow(a)).join("")}
-        </div>
-      </div>` : ""}
-
-      ${tributeApps.length > 0 ? `
-      <div class="section">
-        <div class="section-header">
-          <h2>Tribute</h2>
-        </div>
-        <div class="app-list">
-          ${tributeApps.map((a) => appRow(a)).join("")}
         </div>
       </div>` : ""}
     `;
@@ -625,6 +604,16 @@
 
     if (view === "github") {
       window.open(data.store.github, "_blank");
+      return;
+    }
+
+    if (view === "linkedin") {
+      window.open(data.store.linkedin, "_blank");
+      return;
+    }
+
+    if (view === "medium") {
+      window.open(data.store.medium, "_blank");
       return;
     }
 
