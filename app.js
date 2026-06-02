@@ -508,6 +508,11 @@
               <span class="info-label">Owner</span>
               <span class="info-value">${getOwner(app)}</span>
             </div>
+            ${app.contactMail ? `
+            <div class="info-item">
+              <span class="info-label">Contact</span>
+              <span class="info-value"><a href="mailto:${app.contactMail}">${app.contactMail}</a></span>
+            </div>` : ""}
             <div class="info-item">
               <span class="info-label">Compatibility</span>
               <span class="info-value">${app.requirements}</span>
@@ -914,7 +919,7 @@
   async function init() {
     try {
       const cacheBust = Date.now();
-      const resp = await fetch("apps.json?v=" + cacheBust);
+      const resp = await fetch("/apps.json?v=" + cacheBust);
       data = await resp.json();
     } catch {
       $("#contentScroll").innerHTML = `

@@ -77,6 +77,7 @@
       ],
       "platform": "Web",
       "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "https://github.com/barisgunduz/teeny-tiny-web",
       "homepage": "https://teeny-tiny-web.vercel.app/",
@@ -116,6 +117,7 @@
       ],
       "platform": "Chrome",
       "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "https://github.com/Gunduz-Medya/checkdonehub",
       "homepage": "https://chromewebstore.google.com/detail/check-done-hub/ebfkafokilbffgfoemfefbkhhdikiiip",
@@ -153,6 +155,7 @@
       ],
       "platform": "Chrome",
       "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "https://github.com/Gunduz-Medya/protasktimer",
       "homepage": "https://chromewebstore.google.com/detail/protasktimer/ldkggagkkfagekoodligfapmnjnokmli",
@@ -191,6 +194,7 @@
       ],
       "platform": "Chrome",
       "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "https://github.com/Gunduz-Medya/passaroo",
       "homepage": "https://chromewebstore.google.com/detail/passaroo-password-generat/pgfpklgdcmbiijdddcdddiieiobicmek",
@@ -226,6 +230,7 @@
       ],
       "platform": "Content Creation",
       "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "",
       "homepage": "https://www.vaktindeye.com",
@@ -265,6 +270,7 @@
       ],
       "platform": "Content Creation",
       "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "",
       "homepage": "https://instagram.com/moviepartx",
@@ -289,6 +295,54 @@
       "screenshots": [
         "/icons/moviepartxinsta.png",
         "/icons/moviepartxyoutube.png"
+      ]
+    },
+    {
+      "id": "substrack",
+      "name": "Substrack",
+      "subtitle": "A simple mobile subscription tracking app.",
+      "description": "Track your subscriptions, see upcoming renewals, review monthly spending, enable billing reminders, and keep everything organized locally on your device.",
+      "longDescription": "Substrack helps you keep track of recurring subscriptions in one simple, organized place. You can add subscriptions, set prices and billing dates, see what renews next, and understand how much you spend each month and year. The app is designed to make recurring payments easier to follow without requiring an account, ads, analytics tracking, or a complicated setup. Substrack stores your subscription data locally on your device and uses exchange rates to help display totals in your selected currency, continuing with default values when exchange rates are unavailable.",
+      "icon": "/icons/Substrack-Logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "mobile",
+        "productivity"
+      ],
+      "platform": "iOS",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "https://github.com/barisgunduz/subscription-tracker",
+      "homepage": "",
+      "language": "React Native",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "iPhone",
+      "features": [
+        "Track active and paused subscriptions",
+        "Add custom subscriptions or choose from built-in services",
+        "View upcoming payments and renewal dates",
+        "See monthly and yearly spending totals",
+        "Review category-based spending insights",
+        "Choose your display currency",
+        "Enable local billing reminders",
+        "Export subscription data as JSON, CSV, or PDF",
+        "Use light or dark theme",
+        "Keep subscription data stored locally on your device",
+        "Use the app without an account, ads, or analytics tracking"
+      ],
+      "screenshots": [
+        "/screenshots/substrack/Substrack-ss-1.png",
+        "/screenshots/substrack/Substrack-ss-2.png",
+        "/screenshots/substrack/Substrack-ss-3.png",
+        "/screenshots/substrack/Substrack-ss-4.png"
       ]
     }
   ]
