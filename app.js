@@ -8,6 +8,7 @@
   "use strict";
 
   let data = null;
+  let privacyPolicies = {};
   let currentView = "discover";
   let currentApp = null;
 
@@ -182,6 +183,25 @@
 
   function isContentAppWithoutGithub(app) {
     return Array.isArray(app.category) && app.category.includes("content") && !hasGithubLink(app);
+  }
+
+  function isMobileApp(app) {
+    const platform = (app.platform || "").toLowerCase();
+    return (Array.isArray(app.category) && app.category.includes("mobile"))
+      || platform === "mobile"
+      || platform === "ios"
+      || platform === "android";
+  }
+
+  function getAppDetailView(app) {
+    if (!app) return "discover";
+    if (isMobileApp(app)) return "mobile";
+    if (Array.isArray(app.category) && app.category.length > 0) return app.category[0];
+    return "discover";
+  }
+
+  function shouldShowPrivacyPolicy(app) {
+    return isMobileApp(app);
   }
 
   function shouldShowGithubStat(app, key) {
@@ -513,6 +533,11 @@
               <span class="info-label">Contact</span>
               <span class="info-value"><a href="mailto:${app.contactMail}">${app.contactMail}</a></span>
             </div>` : ""}
+            ${shouldShowPrivacyPolicy(app) ? `
+            <div class="info-item">
+              <span class="info-label">Privacy</span>
+              <span class="info-value"><a href="${buildPath("privacy-policy", app.id)}" data-action="privacy-policy" data-app="${app.id}">Privacy Policy</a></span>
+            </div>` : ""}
             <div class="info-item">
               <span class="info-label">Compatibility</span>
               <span class="info-value">${app.requirements}</span>
@@ -539,6 +564,69 @@
             </div>` : ""}
           </div>
         </div>
+      </div>`;
+  }
+
+  function renderPolicyParagraphs(paragraphs) {
+    if (!Array.isArray(paragraphs) || paragraphs.length === 0) return "";
+    return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
+  }
+
+  function renderPolicyList(items) {
+    if (!Array.isArray(items) || items.length === 0) return "";
+    return `<ul class="features-list policy-list">${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+  }
+
+  function renderPolicySections(sections) {
+    if (!Array.isArray(sections) || sections.length === 0) return "";
+    return sections.map((section) => `
+        <div class="detail-section policy-section">
+          <h3>${section.title}</h3>
+          ${renderPolicyParagraphs(section.paragraphs)}
+          ${renderPolicyList(section.items)}
+        </div>`).join("");
+  }
+
+  function renderPrivacyPolicy(appId) {
+    const app = data.apps.find((a) => a.id === appId);
+    if (!app || !shouldShowPrivacyPolicy(app)) {
+      return `
+        <div class="empty-state">
+          <div class="empty-state-icon">📄</div>
+          <h3>Privacy policy not found</h3>
+          <p>This page is available only for mobile apps with a privacy policy.</p>
+        </div>`;
+    }
+
+    const policy = privacyPolicies[appId] || {};
+    const hasContent = (Array.isArray(policy.intro) && policy.intro.length > 0)
+      || (Array.isArray(policy.sections) && policy.sections.length > 0);
+    const updated = policy.updated ? `<div class="policy-updated">Last updated: ${policy.updated}</div>` : "";
+
+    return `
+      <div class="app-detail policy-detail">
+        <div class="back-btn" data-action="privacy-back" data-app="${app.id}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to ${app.name}
+        </div>
+
+        <div class="app-detail-header">
+          <div class="app-detail-icon"${iconContainerStyle(app)}>${renderIcon(app)}</div>
+          <div class="app-detail-title-area">
+            <div class="app-detail-title">${policy.title || `${app.name} Privacy Policy`}</div>
+            <div class="app-detail-subtitle">${policy.subtitle || app.subtitle}</div>
+            ${updated}
+          </div>
+        </div>
+
+        ${hasContent ? `
+        <div class="detail-section policy-intro">
+          ${renderPolicyParagraphs(policy.intro)}
+        </div>
+        ${renderPolicySections(policy.sections)}` : `
+        <div class="detail-section policy-intro">
+          <p>Privacy policy content for ${app.name} will be added soon.</p>
+        </div>`}
       </div>`;
   }
 
@@ -622,7 +710,11 @@
       return;
     }
 
-    if (appId) {
+    if (view === "privacy-policy" && appId) {
+      currentApp = appId;
+      currentView = view;
+      scroll.innerHTML = renderPrivacyPolicy(appId);
+    } else if (appId) {
       currentApp = appId;
       currentView = view;
       scroll.innerHTML = renderAppDetail(appId);
@@ -799,6 +891,24 @@
       btn.addEventListener("click", () => navigate(currentView));
     });
 
+    $$("[data-action='privacy-policy']").forEach((link) => {
+      if (link.dataset.boundPrivacy) return;
+      link.dataset.boundPrivacy = "1";
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        navigate("privacy-policy", link.dataset.app);
+      });
+    });
+
+    $$("[data-action='privacy-back']").forEach((btn) => {
+      if (btn.dataset.boundPrivacyBack) return;
+      btn.dataset.boundPrivacyBack = "1";
+      btn.addEventListener("click", () => {
+        const app = data.apps.find((a) => a.id === btn.dataset.app);
+        navigate(getAppDetailView(app), btn.dataset.app);
+      });
+    });
+
     $$("[data-copy]").forEach((el) => {
       if (el.dataset.boundCopy) return;
       el.dataset.boundCopy = "1";
@@ -921,6 +1031,8 @@
       const cacheBust = Date.now();
       const resp = await fetch("/apps.json?v=" + cacheBust);
       data = await resp.json();
+      const policyResp = await fetch("/privacy-policies.json?v=" + cacheBust);
+      privacyPolicies = policyResp.ok ? await policyResp.json() : {};
     } catch {
       $("#contentScroll").innerHTML = `
         <div class="empty-state">
@@ -975,6 +1087,11 @@
     });
 
     backBtn.addEventListener("click", () => {
+      if (currentView === "privacy-policy" && currentApp) {
+        const app = data.apps.find((a) => a.id === currentApp);
+        navigate(getAppDetailView(app), currentApp);
+        return;
+      }
       navigate(currentView);
     });
 

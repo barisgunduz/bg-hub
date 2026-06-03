@@ -1,0 +1,66 @@
+{
+  "substrack": {
+    "title": "Substrack Privacy Policy",
+    "subtitle": "Privacy information for the Substrack mobile app.",
+    "updated": "June 1, 2026",
+    "intro": [
+      "Substrack is designed to work without an account, analytics, advertising, or selling personal data. The app helps you track subscriptions using information you enter on your device, and uses api.frankfurter.dev only to refresh exchange rates for currency conversion."
+    ],
+    "sections": [
+      {
+        "title": "Data You Enter",
+        "paragraphs": [
+          "Subscription names, prices, billing dates, categories, notes, and notification preferences are stored locally on your device. We do not operate a server that receives or stores this subscription data. The only network request used for app functionality is a currency-rate request to api.frankfurter.dev, without your saved subscription details."
+        ]
+      },
+      {
+        "title": "How Data Is Stored",
+        "paragraphs": [
+          "Your subscription data is stored locally on your device. Substrack requests exchange rates from api.frankfurter.dev so it can show totals in your selected display currency. Your saved subscription details are not sent with that request. The Frankfurter public API states that it does not collect personal data, but because the service is delivered through Cloudflare, Cloudflare may process basic technical request information such as IP address, timestamp, and request metadata. If the request fails, the app continues using its built-in default exchange rates."
+        ]
+      },
+      {
+        "title": "Analytics",
+        "paragraphs": [
+          "The app does not include analytics, advertising trackers, or crash reporting SDKs. App activity is not used for advertising or user profiling."
+        ]
+      },
+      {
+        "title": "Authentication and Ads",
+        "paragraphs": [
+          "The app does not include user authentication and does not show ads. We do not sell your data or share your subscription details with advertisers."
+        ]
+      },
+      {
+        "title": "Notifications",
+        "paragraphs": [
+          "If you enable billing reminders, notification scheduling happens for the purpose of reminding you about upcoming renewals. You can turn notifications off in Settings at any time."
+        ]
+      },
+      {
+        "title": "Exporting Data",
+        "paragraphs": [
+          "If you export your subscriptions, the exported file is created from the data stored on your device. You control where that file is saved or shared after export."
+        ]
+      },
+      {
+        "title": "Children",
+        "paragraphs": [
+          "The app is not directed to children under 13. We do not knowingly collect personal information from children."
+        ]
+      },
+      {
+        "title": "Changes",
+        "paragraphs": [
+          "This policy may be updated when app features or legal requirements change. The updated date above will reflect the latest version."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "For privacy questions, contact baris@gunduzmedya.com."
+        ]
+      }
+    ]
+  }
+}
