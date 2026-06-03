@@ -11,6 +11,7 @@
   let privacyPolicies = {};
   let currentView = "discover";
   let currentApp = null;
+  let currentPage = null;
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
@@ -536,7 +537,7 @@
             ${shouldShowPrivacyPolicy(app) ? `
             <div class="info-item">
               <span class="info-label">Privacy</span>
-              <span class="info-value"><a href="${buildPath("privacy-policy", app.id)}" data-action="privacy-policy" data-app="${app.id}">Privacy Policy</a></span>
+              <span class="info-value"><a href="${buildPath(getAppDetailView(app), app.id, "privacy-policy")}" data-action="privacy-policy" data-app="${app.id}">Privacy Policy</a></span>
             </div>` : ""}
             <div class="info-item">
               <span class="info-label">Compatibility</span>
@@ -661,8 +662,8 @@
   // Router
   let suppressHistory = false;
 
-  function buildPath(view, appId) {
-    if (appId) return `/${view}/${appId}`;
+  function buildPath(view, appId, page) {
+    if (appId) return `/${view}/${appId}${page ? `/${page}` : ""}`;
     if (view === "discover") return "/";
     return `/${view}`;
   }
@@ -673,10 +674,13 @@
 
   function parsePath(pathname) {
     const cleanPath = normalizePath(pathname).replace(/^\/+/, "");
-    if (!cleanPath) return { view: "discover", appId: null };
+    if (!cleanPath) return { view: "discover", appId: null, page: null };
     const parts = cleanPath.split("/");
-    if (parts.length >= 2) return { view: parts[0], appId: parts[1] };
-    return { view: parts[0], appId: null };
+    if (parts.length >= 3 && parts[2] === "privacy-policy") {
+      return { view: parts[0], appId: parts[1], page: "privacy-policy" };
+    }
+    if (parts.length >= 2) return { view: parts[0], appId: parts[1], page: null };
+    return { view: parts[0], appId: null, page: null };
   }
 
   function migrateLegacyHashRoute() {
@@ -685,15 +689,22 @@
     const parts = hash.split("/");
     const nextView = parts[0] || "discover";
     const nextAppId = parts[1] || null;
-    const nextPath = buildPath(nextView, nextAppId);
+    const nextPage = parts[2] === "privacy-policy" ? "privacy-policy" : null;
+    const nextPath = buildPath(nextView, nextAppId, nextPage);
     history.replaceState({}, "", nextPath + location.search);
-    return { view: nextView, appId: nextAppId };
+    return { view: nextView, appId: nextAppId, page: nextPage };
   }
 
-  function navigate(view, appId, fromHistory) {
+  function navigate(view, appId, fromHistory, page) {
     if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
     const scroll = $("#contentScroll");
     scroll.scrollTop = 0;
+
+    if (view === "privacy-policy" && appId && !page) {
+      const app = data.apps.find((a) => a.id === appId);
+      view = getAppDetailView(app);
+      page = "privacy-policy";
+    }
 
     if (view === "github") {
       window.open(data.store.github, "_blank");
@@ -710,27 +721,31 @@
       return;
     }
 
-    if (view === "privacy-policy" && appId) {
+    if (page === "privacy-policy" && appId) {
       currentApp = appId;
       currentView = view;
+      currentPage = page;
       scroll.innerHTML = renderPrivacyPolicy(appId);
     } else if (appId) {
       currentApp = appId;
       currentView = view;
+      currentPage = null;
       scroll.innerHTML = renderAppDetail(appId);
     } else if (view === "discover") {
       currentApp = null;
       currentView = view;
+      currentPage = null;
       scroll.innerHTML = renderDiscover();
     } else {
       currentApp = null;
       currentView = view;
+      currentPage = null;
       scroll.innerHTML = renderCategory(view);
     }
 
     if (!fromHistory) {
       suppressHistory = true;
-      history.pushState({}, "", buildPath(currentView, currentApp));
+      history.pushState({}, "", buildPath(currentView, currentApp, currentPage));
       suppressHistory = false;
     }
 
@@ -741,8 +756,8 @@
 
   function onPopState() {
     if (suppressHistory) return;
-    const { view, appId } = parsePath(location.pathname);
-    navigate(view || "discover", appId || null, true);
+    const { view, appId, page } = parsePath(location.pathname);
+    navigate(view || "discover", appId || null, true, page || null);
   }
 
   // Modal
@@ -896,7 +911,8 @@
       link.dataset.boundPrivacy = "1";
       link.addEventListener("click", (e) => {
         e.preventDefault();
-        navigate("privacy-policy", link.dataset.app);
+        const app = data.apps.find((a) => a.id === link.dataset.app);
+        navigate(getAppDetailView(app), link.dataset.app, false, "privacy-policy");
       });
     });
 
@@ -1002,6 +1018,7 @@
           scroll.scrollTop = 0;
           scroll.innerHTML = renderSearch(q);
           currentApp = null;
+          currentPage = null;
           $$(".nav-item").forEach((n) => n.classList.remove("active"));
           bindEvents();
         } else {
@@ -1046,7 +1063,7 @@
     buildSidebar();
     window.addEventListener("popstate", onPopState);
     const initial = migrateLegacyHashRoute() || parsePath(location.pathname);
-    navigate(initial.view || "discover", initial.appId || null);
+    navigate(initial.view || "discover", initial.appId || null, false, initial.page || null);
     bindSidebar();
     bindSearch();
     bindKeyboard();
@@ -1087,7 +1104,7 @@
     });
 
     backBtn.addEventListener("click", () => {
-      if (currentView === "privacy-policy" && currentApp) {
+      if (currentPage === "privacy-policy" && currentApp) {
         const app = data.apps.find((a) => a.id === currentApp);
         navigate(getAppDetailView(app), currentApp);
         return;
@@ -1131,7 +1148,7 @@
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
       updateLabel();
-      navigate(currentView, currentApp);
+      navigate(currentView, currentApp, false, currentPage);
     });
   }
 
