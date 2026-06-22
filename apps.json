@@ -8,7 +8,8 @@
     "url": "https://hub.barisgunduz.com",
     "github": "https://github.com/barisgunduz",
     "linkedin": "https://www.linkedin.com/in/barisgunduz/",
-    "medium": "https://barisgunduz.medium.com/"
+    "medium": "https://barisgunduz.medium.com/",
+    "blog": "https://www.barisgunduz.com/"
   },
   "featured": [
     {
@@ -62,6 +63,7 @@
     {
       "id": "teenytinyweb",
       "name": "Teeny Tiny Web",
+      "featured": true,
       "subtitle": "Small but Mighty Dev Resources.",
       "description": "A little bit of everything, right in the middle web tools, files, helpers etc...",
       "longDescription": "Teeny Tiny Web is a compact hub built around the idea that the best developer resources don’t need to be big or complicated to be useful. With the motto “Small but Mighty Dev Resources,” the platform brings together a little bit of everything - practical web tools, helpful utilities, handy files, and simple developer helpers - all in one place. Designed to sit right in the middle of everyday workflows, Teeny Tiny Web focuses on speed, simplicity, and usefulness, giving developers quick access to the small resources that make a big difference in daily development.",
@@ -102,6 +104,7 @@
     {
       "id": "checkdonehub",
       "name": "Check Done Hub",
+      "featured": false,
       "subtitle": "Small but Mighty Dev Resources.",
       "description": "Check Done Hub is a minimalist to-do list app that helps you stay organized with zero fuss.",
       "longDescription": "Check Done App is designed to be the simplest and most straightforward to-do list manager available. With Check Done Hub, you can effortlessly manage your tasks without any unnecessary complications. This extension provides a clean and intuitive interface, allowing you to focus solely on completing your tasks.",
@@ -140,6 +143,7 @@
     {
       "id": "protasktimer",
       "name": "Pro Task Timer",
+      "featured": false,
       "subtitle": "A task-based time tracking Chrome extension.",
       "description": "Simplify task management and optimize your productivity with precise time tracking.",
       "longDescription": "ProTaskTimer is a user-friendly Chrome extension designed to help you efficiently track time spent on tasks, manage your daily workload, and boost productivity. With ProTaskTimer, you can effortlessly monitor your progress and export daily task reports with a single click.",
@@ -179,6 +183,7 @@
     {
       "id": "passaroo",
       "name": "Passaroo - Password Generator",
+      "featured": false,
       "subtitle": "Simplify the process of creating strong and reliable passwords.",
       "description": "easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
       "longDescription": "Passaroo is a secure and customizable password generator extension designed to simplify the process of creating strong and reliable passwords. With Passaroo, you can easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
@@ -217,6 +222,7 @@
     {
       "id": "vaktindeye",
       "name": "Vaktinde Ye",
+      "featured": true,
       "subtitle": "Healthy lifestyle content in Turkish",
       "description": "A content platform focused on healthy lifestyle topics, providing articles, tips, and resources in Turkish.",
       "longDescription": "Vaktinde Ye is a content platform dedicated to promoting a healthy lifestyle through informative articles, practical tips, and valuable resources. The platform covers a wide range of topics including nutrition, fitness, mental well-being, and overall wellness. All content is provided in Turkish, making it accessible to a broad audience in Turkey. Whether you're looking for healthy recipes, workout routines, or advice on maintaining mental health, Vaktinde Ye offers a comprehensive resource for anyone interested in improving their lifestyle.",
@@ -257,6 +263,7 @@
     {
       "id": "moviepartx",
       "name": "Movie Part X",
+      "featured": true,
       "subtitle": "Movie and series content in English",
       "description": "A content platform focused on movies and TV series, providing summaries, trivia, and recommendations in English.",
       "longDescription": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world. The platform covers a wide range of content including movie summaries, character insights, behind-the-scenes facts, and curated watch recommendations. All content is presented in English, making it accessible to a global audience of movie enthusiasts. Whether you're searching for your next binge-worthy series, revisiting classic films, or discovering interesting details about your favorite actors and stories, Movie Part X offers a comprehensive resource for anyone passionate about cinema and television.",
@@ -300,6 +307,7 @@
     {
       "id": "substrack",
       "name": "Substrack",
+      "featured": true,
       "subtitle": "A simple mobile subscription tracking app.",
       "description": "Track your subscriptions, see upcoming renewals, review monthly spending, enable billing reminders, and keep everything organized locally on your device.",
       "longDescription": "Substrack helps you keep track of recurring subscriptions in one simple, organized place. You can add subscriptions, set prices and billing dates, see what renews next, and understand how much you spend each month and year. The app is designed to make recurring payments easier to follow without requiring an account, ads, analytics tracking, or a complicated setup. Substrack stores your subscription data locally on your device and uses exchange rates to help display totals in your selected currency, continuing with default values when exchange rates are unavailable.",
@@ -318,7 +326,7 @@
       "contactMail": "baris@gunduzmedya.com",
       "price": "Free",
       "github": "https://github.com/barisgunduz/subscription-tracker",
-      "homepage": "",
+      "homepage": "https://apps.apple.com/tr/app/substrack-payment-tracker/id6775582144",
       "language": "React Native",
       "stars": 0,
       "forks": 0,

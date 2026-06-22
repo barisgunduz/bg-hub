@@ -27,6 +27,7 @@
     mobile: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>`,
     content: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/><path d="M15.5 3v5l-2-1.4L11.5 8V3"/></svg>`,
     productivity: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`,
+    blog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>`,
     github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
     linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.9 1.96 1.96 0 0 0 5.25 3zM20.44 13.04c0-3.46-1.85-5.07-4.31-5.07-1.99 0-2.88 1.1-3.38 1.87V8.5H9.38c.05.89 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.67.9-1.36 1.95-1.36 1.38 0 1.93 1.02 1.93 2.52V20h3.38v-6.96z"/></svg>`,
     medium: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12c0 3.45-2.78 6.25-6.2 6.25S1.13 15.45 1.13 12s2.78-6.25 6.2-6.25 6.21 2.8 6.21 6.25zM20.34 12c0 3.25-1.39 5.88-3.1 5.88s-3.1-2.63-3.1-5.88 1.39-5.88 3.1-5.88 3.1 2.63 3.1 5.88zM23.13 12c0 2.91-.49 5.27-1.09 5.27s-1.09-2.36-1.09-5.27.49-5.27 1.09-5.27 1.09 2.36 1.09 5.27z"/></svg>`,
@@ -303,114 +304,95 @@
     html += `<div class="nav-item" data-view="medium">
       <span class="nav-icon">${icons.medium}</span>Medium
     </div>`;
+    html += `<div class="nav-item" data-view="blog">
+      <span class="nav-icon">${icons.blog}</span>Blog 🇹🇷
+    </div>`;
 
     nav.innerHTML = html;
   }
 
-  function renderFeaturedBanner(f) {
-    const app = data.apps.find((a) => a.id === f.id);
+  function renderIntroHero() {
+    const ownerName = data.store?.owner || "Baris Gunduz";
+    const cvLink = data.store?.linkedin || data.store?.github || data.store?.medium || "#";
+
     return `
-      <div class="featured-banner" data-app="${f.id}">
-        <div class="featured-content">
-          <div class="featured-label">${f.headline}</div>
-          <div class="featured-title">${f.title}</div>
-          <div class="featured-subtitle">${f.subtitle}</div>
-          ${app ? `
-          <div class="featured-app-row">
-            <div class="featured-app-icon"${iconContainerStyle(app)}>${renderIcon(app)}</div>
-            <div class="featured-app-info">
-              <div class="featured-app-name">${app.name}</div>
-              <div class="featured-app-sub">${app.subtitle}</div>
-            </div>
-            <button class="featured-get-btn${isPaidApp(app) ? " buy-btn" : ""}" data-action="get" data-app="${app.id}">${getButtonLabel(app)}</button>
-          </div>` : ""}
+      <section class="intro-hero" aria-label="About ${ownerName}">
+        <div class="intro-copy">
+          <div class="intro-eyebrow">Hi, I'm ${ownerName}</div>
+          <h1 class="intro-title">Senior Software Engineer and product builder.</h1>
+          <p class="intro-summary">
+            13+ years shipping web applications, SaaS platforms, and advertising technology with a product-first engineering mindset.
+          </p>
+          <ul class="intro-points">
+            <li>Specializing in JavaScript and modern web product development.</li>
+            <li>Founder of Gündüz Medya, building products like Substrack, Vaktinde Ye, Teeny Tiny Web, and Movie Part X.</li>
+            <li>Open to collaboration on product-driven engineering work.</li>
+          </ul>
+          <a href="${cvLink}" target="_blank" rel="noopener" class="intro-cv-button">
+            <span class="intro-cv-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 3v5h5"/>
+                <path d="M9 13h6"/>
+                <path d="M9 17h4"/>
+              </svg>
+            </span>
+            <span>Review my CV</span>
+          </a>
         </div>
-      </div>`;
+        <div class="intro-brand" aria-hidden="true">
+          <div class="intro-logo-shell">
+            <img src="/design-scheme/logo02.png" alt="" class="intro-logo" />
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function getDiscoverCategories() {
+    return (data.categories || [])
+      .filter((cat) => cat.id !== "all")
+      .filter((cat) => data.apps.some((app) => appBelongsToCategory(app, cat.id)));
+  }
+
+  function renderSectionTitle(icon, title) {
+    return `<span class="section-title"><span class="section-title-icon" aria-hidden="true">${icon}</span><span>${title}</span></span>`;
   }
 
   // Discover Page
   function renderDiscover() {
     const apps = data.apps;
-    const featuredList = (Array.isArray(data.featured) ? data.featured : [data.featured])
-      .filter((item) => item && apps.some((app) => app.id === item.id));
-
-    const macosApps = apps.filter((a) => a.category.includes("macos"));
-    const devApps = apps.filter((a) => a.category.includes("developer-tools"));
-    const gameApps = apps.filter((a) => a.category.includes("games"));
-
-    const dots = featuredList.length > 1
-      ? `<div class="carousel-dots">${featuredList.map((_, i) => `<button class="carousel-dot${i === 0 ? " active" : ""}" data-slide="${i}"></button>`).join("")}</div>`
-      : "";
+    const featuredApps = apps.filter((a) => a.featured === true);
+    const discoverCategories = getDiscoverCategories();
+    const discoverAllIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6"/><path d="M10 9h5v5"/></svg>`;
 
     let html = `
-      <div class="carousel">
-        <div class="carousel-track">
-          ${featuredList.map((f) => renderFeaturedBanner(f)).join("")}
-        </div>
-        ${dots}
-      </div>
+      ${renderIntroHero()}
 
       <div class="section">
         <div class="section-header">
-          <h2>Best New Apps and Updates</h2>
+          <h2>${renderSectionTitle(icons.discover, "Featured Apps")}</h2>
         </div>
         <div class="app-list">
-          ${apps.slice(0, 6).map((a) => appRow(a)).join("")}
+          ${featuredApps.map((a) => appRow(a)).join("")}
         </div>
       </div>
 
-      ${(() => {
-        const paidApps = apps.filter((a) => isPaidApp(a));
-        if (paidApps.length === 0) return "";
+      ${discoverCategories.map((cat) => {
+        const categoryApps = apps.filter((a) => appBelongsToCategory(a, cat.id)).slice(0, 4);
         return `
       <div class="section">
         <div class="section-header">
-          <h2>Best Paid Apps</h2>
+          <h2>${renderSectionTitle(getCategoryIcon(cat.id), cat.name)}</h2>
+          <button class="see-all discover-all-btn" data-action="discover-category" data-view="${cat.id}">
+            <span class="discover-all-icon" aria-hidden="true">${discoverAllIcon}</span>
+            <span>Discover All</span>
+          </button>
         </div>
         <div class="app-list">
-          ${paidApps.map((a) => appRow(a)).join("")}
+          ${categoryApps.map((a) => appRow(a)).join("")}
         </div>
       </div>`;
-      })()}
-
-      <div class="section">
-        <div class="section-header">
-          <h2>The Latest Must-Try Apps</h2>
-        </div>
-        <div class="cards-grid">
-          ${apps.slice(0, 4).map((a, i) => appCard(a, i)).join("")}
-        </div>
-      </div>
-
-      ${macosApps.length > 0 ? `
-      <div class="section">
-        <div class="section-header">
-          <h2>macOS Apps</h2>
-        </div>
-        <div class="app-list">
-          ${macosApps.map((a) => appRow(a)).join("")}
-        </div>
-      </div>` : ""}
-
-      ${devApps.length > 0 ? `
-      <div class="section">
-        <div class="section-header">
-          <h2>Developer Tools</h2>
-        </div>
-        <div class="app-list">
-          ${devApps.map((a) => appRow(a)).join("")}
-        </div>
-      </div>` : ""}
-
-      ${gameApps.length > 0 ? `
-      <div class="section">
-        <div class="section-header">
-          <h2>Games</h2>
-        </div>
-        <div class="app-list">
-          ${gameApps.map((a) => appRow(a)).join("")}
-        </div>
-      </div>` : ""}
+      }).join("")}
     `;
 
     return html;
@@ -721,6 +703,11 @@
       return;
     }
 
+    if (view === "blog") {
+      window.open(data.store.blog, "_blank");
+      return;
+    }
+
     if (page === "privacy-policy" && appId) {
       currentApp = appId;
       currentView = view;
@@ -922,6 +909,15 @@
       btn.addEventListener("click", () => {
         const app = data.apps.find((a) => a.id === btn.dataset.app);
         navigate(getAppDetailView(app), btn.dataset.app);
+      });
+    });
+
+    $$("[data-action='discover-category']").forEach((btn) => {
+      if (btn.dataset.boundDiscoverCategory) return;
+      btn.dataset.boundDiscoverCategory = "1";
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navigate(btn.dataset.view);
       });
     });
 
