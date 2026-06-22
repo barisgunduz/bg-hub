@@ -26,7 +26,6 @@
     games: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="3"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="4" y1="12" x2="8" y2="12"/><circle cx="16" cy="10" r="1" fill="currentColor"/><circle cx="19" cy="12" r="1" fill="currentColor"/></svg>`,
     mobile: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>`,
     content: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/><path d="M15.5 3v5l-2-1.4L11.5 8V3"/></svg>`,
-    productivity: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`,
     blog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>`,
     github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`,
     linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.9 1.96 1.96 0 0 0 5.25 3zM20.44 13.04c0-3.46-1.85-5.07-4.31-5.07-1.99 0-2.88 1.1-3.38 1.87V8.5H9.38c.05.89 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.67.9-1.36 1.95-1.36 1.38 0 1.93 1.02 1.93 2.52V20h3.38v-6.96z"/></svg>`,
@@ -346,7 +345,7 @@
         </div>
         <div class="intro-brand" aria-hidden="true">
           <div class="intro-logo-shell">
-            <img src="/design-scheme/logo03.png" alt="" class="intro-logo" />
+            <img src="/screenshots/barisgunduz/logo03.png" alt="" class="intro-logo" />
           </div>
         </div>
       </section>`;
@@ -847,6 +846,47 @@
     }, 300);
   }
 
+  function openLightbox(src, alt) {
+    const overlay = $("#lightboxOverlay");
+    const image = $("#lightboxImage");
+    if (!overlay || !image || !src) return;
+
+    image.src = src;
+    image.alt = alt || "Preview image";
+    overlay.style.display = "flex";
+    overlay.setAttribute("aria-hidden", "false");
+    requestAnimationFrame(() => overlay.classList.add("visible"));
+  }
+
+  function closeLightbox() {
+    const overlay = $("#lightboxOverlay");
+    const image = $("#lightboxImage");
+    if (!overlay || !image) return;
+
+    overlay.classList.remove("visible");
+    overlay.setAttribute("aria-hidden", "true");
+    setTimeout(() => {
+      overlay.style.display = "none";
+      image.src = "";
+      image.alt = "";
+    }, 240);
+  }
+
+  function bindLightbox() {
+    const overlay = $("#lightboxOverlay");
+    const closeBtn = $("#lightboxClose");
+    if (!overlay || !closeBtn) return;
+
+    if (!overlay.dataset.boundOverlay) {
+      overlay.dataset.boundOverlay = "1";
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay || e.target.closest("#lightboxClose")) {
+          closeLightbox();
+        }
+      });
+    }
+  }
+
   function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
       showToast();
@@ -931,6 +971,16 @@
       el.addEventListener("click", () => copyToClipboard(el.dataset.copy));
     });
 
+    $$(".screenshot-img").forEach((img) => {
+      if (img.dataset.boundLightbox) return;
+      img.dataset.boundLightbox = "1";
+      img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openLightbox(img.currentSrc || img.src, img.alt);
+      });
+    });
+
+    bindLightbox();
     bindCarousel();
   }
 
@@ -1032,7 +1082,18 @@
   function bindKeyboard() {
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        closeModal();
+        const lightboxOpen = $("#lightboxOverlay")?.classList.contains("visible");
+        if (lightboxOpen) {
+          closeLightbox();
+          return;
+        }
+        const modalOpen = $("#modalOverlay")?.classList.contains("visible");
+        if (modalOpen) {
+          closeModal();
+          return;
+        }
+
+        closeLightbox();
         if (currentApp) navigate(currentView);
       }
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -1076,11 +1137,11 @@
     const backBtn = $("#mobileBackBtn");
     if (!menuBtn || !backBtn) return;
 
+    menuBtn.classList.remove("hidden");
+
     if (currentApp) {
-      menuBtn.classList.add("hidden");
       backBtn.classList.remove("hidden");
     } else {
-      menuBtn.classList.remove("hidden");
       backBtn.classList.add("hidden");
     }
   }

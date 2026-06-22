@@ -43,10 +43,6 @@
       "name": "Chrome Extensions"
     },
     {
-      "id": "productivity",
-      "name": "Productivity"
-    },
-    {
       "id": "games",
       "name": "Games"
     },
@@ -63,7 +59,7 @@
     {
       "id": "teenytinyweb",
       "name": "Teeny Tiny Web",
-      "featured": true,
+      "featured": false,
       "subtitle": "Small but Mighty Dev Resources.",
       "description": "A little bit of everything, right in the middle web tools, files, helpers etc...",
       "longDescription": "Teeny Tiny Web is a compact hub built around the idea that the best developer resources don’t need to be big or complicated to be useful. With the motto “Small but Mighty Dev Resources,” the platform brings together a little bit of everything - practical web tools, helpful utilities, handy files, and simple developer helpers - all in one place. Designed to sit right in the middle of everyday workflows, Teeny Tiny Web focuses on speed, simplicity, and usefulness, giving developers quick access to the small resources that make a big difference in daily development.",
@@ -74,8 +70,7 @@
         "borderRadius": "22%"
       },
       "category": [
-        "web",
-        "productivity"
+        "web"
       ],
       "platform": "Web",
       "owner": "Barış Gündüz",
@@ -115,8 +110,7 @@
         "borderRadius": "22%"
       },
       "category": [
-        "chrome-extensions",
-        "productivity"
+        "chrome-extensions"
       ],
       "platform": "Chrome",
       "owner": "Barış Gündüz",
@@ -154,8 +148,7 @@
         "borderRadius": "22%"
       },
       "category": [
-        "chrome-extensions",
-        "productivity"
+        "chrome-extensions"
       ],
       "platform": "Chrome",
       "owner": "Barış Gündüz",
@@ -194,8 +187,7 @@
         "borderRadius": "22%"
       },
       "category": [
-        "chrome-extensions",
-        "productivity"
+        "chrome-extensions"
       ],
       "platform": "Chrome",
       "owner": "Barış Gündüz",
@@ -305,6 +297,51 @@
       ]
     },
     {
+      "id": "barisgunduz",
+      "name": "Barış Gündüz",
+      "featured": true,
+      "subtitle": "YouTube content on AI, software, storytelling, and digital products.",
+      "description": "A creator channel exploring software, artificial intelligence, digital products, content systems, and modern media workflows through both short-form and long-form videos.",
+      "longDescription": "Barış Gündüz is a computer engineer creating content around software, artificial intelligence, digital products, and content production. On this channel, he shares experiments, lessons, and practical insights from building, testing, and growing his own ideas. The content goes beyond simply turning on a camera and talking. It focuses on how an idea becomes a compelling story, how AI can support that process, and how software can strengthen creative production workflows. If you are interested in content creation, storytelling, AI tools, software development, digital product building, and digital media, this channel is designed to give you both strategic perspective and practical takeaways.",
+      "icon": "/screenshots/barisgunduz/logo03.png",
+      "iconStyle": {
+        "scale": 0.9,
+        "objectFit": "contain"
+      },
+      "category": [
+        "content"
+      ],
+      "platform": "Content Creation",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "",
+      "homepage": "https://www.youtube.com/@barisgunduz",
+      "language": "YouTube",
+      "stars": 0,
+      "forks": 0,
+      "requirements": "Any modern browser",
+      "features": [
+        "Content creation workflows for both short-form and long-form video",
+        "YouTube growth strategy and audience-building insights",
+        "Storytelling frameworks for more engaging digital content",
+        "Practical AI tools for research, scripting, editing, and ideation",
+        "Software development and product-building lessons from real projects",
+        "Digital product thinking for creators and builders",
+        "Social media strategy and content marketing perspectives",
+        "Productivity systems and repeatable creative workflows"
+      ],
+      "socials": {
+        "youtube": "https://www.youtube.com/@barisgunduz",
+        "instagram": "https://www.instagram.com/iambarisgunduz",
+        "x": "https://x.com/iambarisgunduz"
+      },
+      "screenshots": [
+        "/screenshots/barisgunduz/barisgunduz-youtube.png",
+        "/screenshots/barisgunduz/barisgunduz-instagram.png"
+      ]
+    },
+    {
       "id": "substrack",
       "name": "Substrack",
       "featured": true,
@@ -318,8 +355,7 @@
         "borderRadius": "22%"
       },
       "category": [
-        "mobile",
-        "productivity"
+        "mobile"
       ],
       "platform": "iOS",
       "owner": "Barış Gündüz",
