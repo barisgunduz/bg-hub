@@ -219,19 +219,23 @@
     return "View";
   }
 
+  function getPrimaryCategory(app) {
+    if (!Array.isArray(app.category) || app.category.length === 0) return "default";
+    return app.category[0];
+  }
+
   function appRow(app) {
-    const owner = getOwner(app);
+    const primaryCategory = getPrimaryCategory(app);
     return `
       <div class="app-row" data-app="${app.id}">
         <div class="app-icon"${iconContainerStyle(app)}>${renderIcon(app)}</div>
         <div class="app-info">
           <div class="app-name-row">
             <div class="app-name">${app.name}</div>
-            ${owner ? `<span class="app-meta-tag app-owner-tag">${owner}</span>` : ""}
           </div>
           <div class="app-subtitle">${app.subtitle}</div>
           <div class="app-meta">
-            <span class="app-meta-tag">${app.platform}</span>
+            <span class="app-meta-tag app-meta-tag-${primaryCategory}">${app.platform}</span>
             ${app.stars ? starBadge(app.stars) : ""}
           </div>
         </div>
@@ -319,7 +323,7 @@
       <section class="intro-hero" aria-label="About ${ownerName}">
         <div class="intro-copy">
           <div class="intro-eyebrow">Hi, I'm ${ownerName}</div>
-          <h1 class="intro-title">Senior Software Engineer and product builder.</h1>
+          <h1 class="intro-title">Senior Software Engineer and Product Builder.</h1>
           <p class="intro-summary">
             13+ years shipping web applications, SaaS platforms, and advertising technology with a product-first engineering mindset.
           </p>
@@ -342,7 +346,7 @@
         </div>
         <div class="intro-brand" aria-hidden="true">
           <div class="intro-logo-shell">
-            <img src="/design-scheme/logo02.png" alt="" class="intro-logo" />
+            <img src="/design-scheme/logo03.png" alt="" class="intro-logo" />
           </div>
         </div>
       </section>`;

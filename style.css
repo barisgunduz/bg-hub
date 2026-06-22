@@ -16,17 +16,17 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary: #000000;
-  --bg-secondary: #1c1c1e;
-  --bg-tertiary: #2c2c2e;
-  --bg-card: #1c1c1e;
-  --bg-card-hover: #2c2c2e;
-  --bg-sidebar: rgba(28, 28, 30, 0.85);
-  --text-primary: #f5f5f7;
-  --text-secondary: #86868b;
-  --text-tertiary: #6e6e73;
-  --accent: #0a84ff;
-  --accent-hover: #409cff;
+  --bg-primary: #0e0e10;
+  --bg-secondary: #18181b;
+  --bg-tertiary: #232327;
+  --bg-card: #18181b;
+  --bg-card-hover: #232327;
+  --bg-sidebar: rgba(24, 24, 27, 0.88);
+  --text-primary: #f3f1eb;
+  --text-secondary: #b4aea3;
+  --text-tertiary: #8d877d;
+  --accent: #d4af37;
+  --accent-hover: #e5c867;
   --border: rgba(255, 255, 255, 0.08);
   --border-light: rgba(255, 255, 255, 0.12);
   --scrollbar-thumb: rgba(255, 255, 255, 0.15);
@@ -34,7 +34,7 @@
   --row-hover: rgba(255, 255, 255, 0.03);
   --search-bg: rgba(255, 255, 255, 0.06);
   --nav-hover: rgba(255, 255, 255, 0.06);
-  --nav-active: rgba(10, 132, 255, 0.15);
+  --nav-active: rgba(212, 175, 55, 0.16);
   --get-btn-bg: rgba(255, 255, 255, 0.12);
   --get-btn-hover: rgba(255, 255, 255, 0.18);
   --brew-bg: rgba(0, 0, 0, 0.4);
@@ -45,24 +45,45 @@
   --modal-close-hover: rgba(255, 255, 255, 0.2);
   --developer-hover: rgba(255, 255, 255, 0.08);
   --meta-tag-bg: rgba(255, 255, 255, 0.06);
-  --featured-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --featured-gradient: linear-gradient(135deg, #17171a 0%, #232327 52%, #3d3420 100%);
   --featured-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
   --code-green: #34c759;
+  --tag-web: #6dff8d;
+  --tag-web-bg: rgba(0, 59, 0, 0.34);
+  --tag-web-border: rgba(0, 255, 65, 0.34);
+  --tag-developer-tools: #8fd3b6;
+  --tag-developer-tools-bg: rgba(143, 211, 182, 0.16);
+  --tag-developer-tools-border: rgba(143, 211, 182, 0.28);
+  --tag-chrome-extensions: #ffd95c;
+  --tag-chrome-extensions-bg: rgba(19, 104, 244, 0.22);
+  --tag-chrome-extensions-border: rgba(244, 30, 10, 0.34);
+  --tag-productivity: #ece6da;
+  --tag-productivity-bg: rgba(62, 20, 8, 0.5);
+  --tag-productivity-border: rgba(221, 195, 45, 0.34);
+  --tag-games: #d18cc9;
+  --tag-games-bg: rgba(209, 140, 201, 0.16);
+  --tag-games-border: rgba(209, 140, 201, 0.28);
+  --tag-mobile: #8cc0ff;
+  --tag-mobile-bg: rgba(3, 30, 73, 0.42);
+  --tag-mobile-border: rgba(69, 153, 254, 0.34);
+  --tag-content: #ff7a6e;
+  --tag-content-bg: rgba(238, 4, 5, 0.18);
+  --tag-content-border: rgba(238, 4, 5, 0.34);
   color-scheme: dark;
 }
 
 [data-theme="light"] {
   --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f7;
-  --bg-tertiary: #e8e8ed;
-  --bg-card: #f5f5f7;
-  --bg-card-hover: #e8e8ed;
-  --bg-sidebar: rgba(245, 245, 247, 0.9);
-  --text-primary: #1d1d1f;
-  --text-secondary: #6e6e73;
-  --text-tertiary: #86868b;
-  --accent: #0066cc;
-  --accent-hover: #0077ed;
+  --bg-secondary: #f7f4ee;
+  --bg-tertiary: #ece6da;
+  --bg-card: #f7f4ee;
+  --bg-card-hover: #efe9dd;
+  --bg-sidebar: rgba(255, 255, 255, 0.94);
+  --text-primary: #24211d;
+  --text-secondary: #5f584f;
+  --text-tertiary: #7d7468;
+  --accent: #9f7c1d;
+  --accent-hover: #b68e22;
   --border: rgba(0, 0, 0, 0.08);
   --border-light: rgba(0, 0, 0, 0.12);
   --scrollbar-thumb: rgba(0, 0, 0, 0.15);
@@ -70,7 +91,7 @@
   --row-hover: rgba(0, 0, 0, 0.03);
   --search-bg: rgba(0, 0, 0, 0.04);
   --nav-hover: rgba(0, 0, 0, 0.05);
-  --nav-active: rgba(0, 102, 204, 0.1);
+  --nav-active: rgba(159, 124, 29, 0.12);
   --get-btn-bg: rgba(0, 0, 0, 0.06);
   --get-btn-hover: rgba(0, 0, 0, 0.1);
   --brew-bg: rgba(0, 0, 0, 0.05);
@@ -81,9 +102,30 @@
   --modal-close-hover: rgba(0, 0, 0, 0.1);
   --developer-hover: rgba(0, 0, 0, 0.06);
   --meta-tag-bg: rgba(0, 0, 0, 0.05);
-  --featured-gradient: linear-gradient(135deg, #d4e4f7 0%, #c5d8f0 50%, #a8c4e0 100%);
+  --featured-gradient: linear-gradient(135deg, #eee7d9 0%, #ddd3c0 55%, #cfbb84 100%);
   --featured-overlay: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, transparent 60%);
   --code-green: #1a7a2e;
+  --tag-web: #008f11;
+  --tag-web-bg: rgba(0, 59, 0, 0.08);
+  --tag-web-border: rgba(0, 255, 65, 0.2);
+  --tag-developer-tools: #2d7d60;
+  --tag-developer-tools-bg: rgba(45, 125, 96, 0.1);
+  --tag-developer-tools-border: rgba(45, 125, 96, 0.18);
+  --tag-chrome-extensions: #1368f4;
+  --tag-chrome-extensions-bg: rgba(226, 200, 30, 0.12);
+  --tag-chrome-extensions-border: rgba(244, 30, 10, 0.22);
+  --tag-productivity: #3e1408;
+  --tag-productivity-bg: rgba(236, 230, 218, 0.95);
+  --tag-productivity-border: rgba(221, 195, 45, 0.28);
+  --tag-games: #8f4c85;
+  --tag-games-bg: rgba(143, 76, 133, 0.1);
+  --tag-games-border: rgba(143, 76, 133, 0.18);
+  --tag-mobile: #031e49;
+  --tag-mobile-bg: rgba(69, 153, 254, 0.12);
+  --tag-mobile-border: rgba(238, 4, 5, 0.22);
+  --tag-content: #ee0405;
+  --tag-content-bg: rgba(238, 4, 5, 0.08);
+  --tag-content-border: rgba(238, 4, 5, 0.18);
   color-scheme: light;
 }
 
@@ -546,7 +588,7 @@ body {
   border-radius: var(--radius-xl);
   overflow: hidden;
   background:
-    radial-gradient(circle at top right, rgba(10, 132, 255, 0.2), transparent 32%),
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.2), transparent 32%),
     linear-gradient(135deg, var(--bg-secondary) 0%, color-mix(in srgb, var(--bg-secondary) 78%, var(--accent) 22%) 100%);
   border: 1px solid var(--border-light);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
@@ -582,7 +624,7 @@ body {
   font-size: 34px;
   line-height: 1.02;
   letter-spacing: -0.04em;
-  max-width: 11ch;
+  max-width: 17ch;
   margin-bottom: 12px;
 }
 
@@ -891,12 +933,50 @@ body {
   background: var(--meta-tag-bg);
   padding: 2px 8px;
   border-radius: 4px;
+  border: 1px solid transparent;
+  font-weight: 600;
 }
 
-.app-owner-tag {
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+.app-meta-tag-web {
+  color: var(--tag-web);
+  background: var(--tag-web-bg);
+  border-color: var(--tag-web-border);
+}
+
+.app-meta-tag-developer-tools {
+  color: var(--tag-developer-tools);
+  background: var(--tag-developer-tools-bg);
+  border-color: var(--tag-developer-tools-border);
+}
+
+.app-meta-tag-chrome-extensions {
+  color: var(--tag-chrome-extensions);
+  background: var(--tag-chrome-extensions-bg);
+  border-color: var(--tag-chrome-extensions-border);
+}
+
+.app-meta-tag-productivity {
+  color: var(--tag-productivity);
+  background: var(--tag-productivity-bg);
+  border-color: var(--tag-productivity-border);
+}
+
+.app-meta-tag-games {
+  color: var(--tag-games);
+  background: var(--tag-games-bg);
+  border-color: var(--tag-games-border);
+}
+
+.app-meta-tag-mobile {
+  color: var(--tag-mobile);
+  background: var(--tag-mobile-bg);
+  border-color: var(--tag-mobile-border);
+}
+
+.app-meta-tag-content {
+  color: var(--tag-content);
+  background: var(--tag-content-bg);
+  border-color: var(--tag-content-border);
 }
 
 .get-btn {
