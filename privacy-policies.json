@@ -62,5 +62,59 @@
         ]
       }
     ]
+  },
+  "donit": {
+    "title": "Donit Privacy Policy",
+    "subtitle": "Privacy information for the Donit mobile app.",
+    "updated": "July 4, 2026",
+    "intro": [
+      "Donit (\"the app\") is developed and maintained by Barış Gündüz. This privacy policy explains how the app handles your information."
+    ],
+    "sections": [
+      {
+        "title": "Data We Collect",
+        "paragraphs": [
+          "Donit does not collect, transmit, or share any personal data. The app does not require an account, login, or internet connection to function.",
+          "All data you create in the app — tasks, streaks, history, and settings — is stored locally on your device using on-device storage. This data never leaves your device and is not accessible to us."
+        ]
+      },
+      {
+        "title": "In-App Purchases",
+        "paragraphs": [
+          "Donit offers a one-time consumable in-app purchase (Streak Shield) processed through Apple's App Store. All payment and billing information is handled entirely by Apple. We do not receive, store, or process any payment details.",
+          "We use RevenueCat to verify and manage in-app purchase entitlements. RevenueCat may process a minimal set of anonymized purchase transaction data to fulfill this function. You can review RevenueCat's privacy policy at revenuecat.com/privacy."
+        ]
+      },
+      {
+        "title": "Analytics and Tracking",
+        "paragraphs": [
+          "Donit does not use any analytics tools, crash reporting services, advertising SDKs, or tracking technologies. We do not track your usage of the app."
+        ]
+      },
+      {
+        "title": "Third-Party Services",
+        "paragraphs": [
+          "The only third-party service used by Donit is RevenueCat, solely for in-app purchase processing as described above."
+        ]
+      },
+      {
+        "title": "Children's Privacy",
+        "paragraphs": [
+          "Donit is rated 4+ and is suitable for all ages. We do not knowingly collect any information from children or anyone else."
+        ]
+      },
+      {
+        "title": "Changes to This Policy",
+        "paragraphs": [
+          "If this privacy policy changes, the updated version will be published at this URL with a revised date."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "If you have any questions about this privacy policy, contact us at baris@gunduzmedya.com."
+        ]
+      }
+    ]
   }
 }
