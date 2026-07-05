@@ -1,416 +1,444 @@
 {
-	"$schema": "https://wvw.dev/apps.schema.json",
-	"store": {
-		"name": "BG Hub",
-		"owner": "Barış Gündüz",
-		"developer": "Barış Gündüz",
-		"tagline": "My precious apps",
-		"url": "https://hub.barisgunduz.com",
-		"github": "https://github.com/barisgunduz",
-		"linkedin": "https://www.linkedin.com/in/barisgunduz/",
-		"medium": "https://barisgunduz.medium.com/",
-		"blog": "https://www.barisgunduz.com/"
-	},
-	"featured": [
-		{
-			"id": "moviepartx",
-			"headline": "Magical World of Cinema",
-			"title": "Unlimited movie and series content!",
-			"subtitle": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world."
-		},
-		{
-			"id": "teenytinyweb",
-			"headline": "Teeny Tiny Web",
-			"title": "Small but Mighty Dev Resources.",
-			"subtitle": "A little bit of everything, right in the middle."
-		}
-	],
-	"categories": [
-		{
-			"id": "all",
-			"name": "All Apps"
-		},
-		{
-			"id": "web",
-			"name": "Web Apps"
-		},
-		{
-			"id": "developer-tools",
-			"name": "Developer Tools"
-		},
-		{
-			"id": "chrome-extensions",
-			"name": "Chrome Extensions"
-		},
-		{
-			"id": "games",
-			"name": "Games"
-		},
-		{
-			"id": "mobile",
-			"name": "Mobile Apps"
-		},
-		{
-			"id": "content",
-			"name": "Content Creation"
-		}
-	],
-	"apps": [
-		{
-			"id": "teenytinyweb",
-			"name": "Teeny Tiny Web",
-			"featured": false,
-			"subtitle": "Small but Mighty Dev Resources.",
-			"description": "A little bit of everything, right in the middle web tools, files, helpers etc...",
-			"longDescription": "Teeny Tiny Web is a compact hub built around the idea that the best developer resources don’t need to be big or complicated to be useful. With the motto “Small but Mighty Dev Resources,” the platform brings together a little bit of everything - practical web tools, helpful utilities, handy files, and simple developer helpers - all in one place. Designed to sit right in the middle of everyday workflows, Teeny Tiny Web focuses on speed, simplicity, and usefulness, giving developers quick access to the small resources that make a big difference in daily development.",
-			"icon": "/icons/teenytinyweb-logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "cover",
-				"borderRadius": "22%"
-			},
-			"category": ["web"],
-			"platform": "Web",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "https://github.com/barisgunduz/teeny-tiny-web",
-			"homepage": "https://teeny-tiny-web.vercel.app/",
-			"language": "NextJS",
-			"stars": 0,
-			"forks": 0,
-			"brew": "",
-			"downloadUrl": "",
-			"requirements": "Any modern browser",
-			"features": [
-				"Tools: A growing collection of free online developer tools",
-				"Projects: Real-world mini projects demonstrating essential web development concepts",
-				"Docs: Concise guides and tutorials covering development best practices",
-				"Roadmaps: Step-by-step learning paths for various developer roles",
-				"Dummy Data Generator: Generate realistic mock data for testing APIs and front-end applications",
-				"Freebies: A collection of downloadable resources such as PDFs, templates, and more."
-			],
-			"screenshots": ["/icons/teenytinyweb.png"]
-		},
-		{
-			"id": "checkdonehub",
-			"name": "Check Done Hub",
-			"featured": false,
-			"subtitle": "Small but Mighty Dev Resources.",
-			"description": "Check Done Hub is a minimalist to-do list app that helps you stay organized with zero fuss.",
-			"longDescription": "Check Done App is designed to be the simplest and most straightforward to-do list manager available. With Check Done Hub, you can effortlessly manage your tasks without any unnecessary complications. This extension provides a clean and intuitive interface, allowing you to focus solely on completing your tasks.",
-			"icon": "/icons/checkdonehub-logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "cover",
-				"borderRadius": "22%"
-			},
-			"category": ["chrome-extensions"],
-			"platform": "Chrome",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "https://github.com/Gunduz-Medya/checkdonehub",
-			"homepage": "https://chromewebstore.google.com/detail/check-done-hub/ebfkafokilbffgfoemfefbkhhdikiiip",
-			"language": "React JS",
-			"stars": 0,
-			"forks": 0,
-			"brew": "",
-			"downloadUrl": "",
-			"requirements": "Any modern browser",
-			"features": [
-				"Simplicity First: No complex settings or additional information required—just a straightforward to-do list.",
-				"Easy Task Management: Quickly add, edit, and remove tasks with a user-friendly interface.",
-				"No Sign-Up Needed: Start using the app instantly without any account setup or login.",
-				"Minimalist Design: Focus on what matters most with a clutter-free, distraction-free design."
-			],
-			"screenshots": ["/icons/checkdonehub.png"]
-		},
-		{
-			"id": "protasktimer",
-			"name": "Pro Task Timer",
-			"featured": false,
-			"subtitle": "A task-based time tracking Chrome extension.",
-			"description": "Simplify task management and optimize your productivity with precise time tracking.",
-			"longDescription": "ProTaskTimer is a user-friendly Chrome extension designed to help you efficiently track time spent on tasks, manage your daily workload, and boost productivity. With ProTaskTimer, you can effortlessly monitor your progress and export daily task reports with a single click.",
-			"icon": "/icons/protasktimer-logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "cover",
-				"borderRadius": "22%"
-			},
-			"category": ["chrome-extensions"],
-			"platform": "Chrome",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "https://github.com/Gunduz-Medya/protasktimer",
-			"homepage": "https://chromewebstore.google.com/detail/protasktimer/ldkggagkkfagekoodligfapmnjnokmli",
-			"language": "React JS",
-			"stars": 0,
-			"forks": 0,
-			"brew": "",
-			"downloadUrl": "",
-			"requirements": "Any modern browser",
-			"features": [
-				"Task-Based Tracking: Easily start and stop task timers to track your productivity with precision.",
-				"Persistent Task List: Your tasks and timers are saved automatically, even when you close the popup or browser.",
-				"Export Daily Reports: Download your daily task summary as a CSV file for easy reporting and analysis.",
-				"Minimalist Design: Clean and intuitive interface, ensuring focus on productivity without unnecessary distractions.",
-				"Clear Task Management: Quickly clear completed tasks and start fresh with a single click."
-			],
-			"screenshots": ["/icons/protasktimer.png"]
-		},
-		{
-			"id": "passaroo",
-			"name": "Passaroo - Password Generator",
-			"featured": false,
-			"subtitle": "Simplify the process of creating strong and reliable passwords.",
-			"description": "easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
-			"longDescription": "Passaroo is a secure and customizable password generator extension designed to simplify the process of creating strong and reliable passwords. With Passaroo, you can easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
-			"icon": "/icons/passaroo-logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "cover",
-				"borderRadius": "22%"
-			},
-			"category": ["chrome-extensions"],
-			"platform": "Chrome",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "https://github.com/Gunduz-Medya/passaroo",
-			"homepage": "https://chromewebstore.google.com/detail/passaroo-password-generat/pgfpklgdcmbiijdddcdddiieiobicmek",
-			"language": "React JS",
-			"stars": 0,
-			"forks": 0,
-			"brew": "",
-			"downloadUrl": "",
-			"requirements": "Any modern browser",
-			"features": [
-				"Customizable Password Length: Choose the length of your password, from 6 to 50 characters.",
-				"Character Set Options: Select the inclusion of uppercase letters, numbers, and special characters to enhance password strength.",
-				"Instant Copy to Clipboard: Generate and copy your password to the clipboard with just a click.",
-				"Minimalist Design: A simple, elegant interface that allows you to focus solely on creating secure passwords without distractions."
-			],
-			"screenshots": ["/icons/passaroo.png"]
-		},
-		{
-			"id": "vaktindeye",
-			"name": "Vaktinde Ye",
-			"featured": true,
-			"subtitle": "Healthy lifestyle content in Turkish",
-			"description": "A content platform focused on healthy lifestyle topics, providing articles, tips, and resources in Turkish.",
-			"longDescription": "Vaktinde Ye is a content platform dedicated to promoting a healthy lifestyle through informative articles, practical tips, and valuable resources. The platform covers a wide range of topics including nutrition, fitness, mental well-being, and overall wellness. All content is provided in Turkish, making it accessible to a broad audience in Turkey. Whether you're looking for healthy recipes, workout routines, or advice on maintaining mental health, Vaktinde Ye offers a comprehensive resource for anyone interested in improving their lifestyle.",
-			"icon": "/icons/vaktindeye-logo.jpeg",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "contain"
-			},
-			"category": ["content"],
-			"platform": "Content Creation",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "",
-			"homepage": "https://www.vaktindeye.com",
-			"language": "Wordpress",
-			"stars": 0,
-			"forks": 0,
-			"requirements": "Any modern browser",
-			"features": [
-				"Healthy eating guides and practical nutrition tips",
-				"Science-based fitness and wellness content",
-				"Daily motivation for a disciplined lifestyle",
-				"Easy-to-follow meal and habit suggestions",
-				"Actionable advice for sustainable health habits",
-				"Community-focused healthy living inspiration",
-				"Simple, practical, and realistic wellness strategies"
-			],
-			"socials": {
-				"instagram": "https://www.instagram.com/vaktindeye"
-			},
-			"screenshots": ["/icons/vaktindeye.png"]
-		},
-		{
-			"id": "moviepartx",
-			"name": "Movie Part X",
-			"featured": true,
-			"subtitle": "Movie and series content in English",
-			"description": "A content platform focused on movies and TV series, providing summaries, trivia, and recommendations in English.",
-			"longDescription": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world. The platform covers a wide range of content including movie summaries, character insights, behind-the-scenes facts, and curated watch recommendations. All content is presented in English, making it accessible to a global audience of movie enthusiasts. Whether you're searching for your next binge-worthy series, revisiting classic films, or discovering interesting details about your favorite actors and stories, Movie Part X offers a comprehensive resource for anyone passionate about cinema and television.",
-			"icon": "/icons/moviepartx-logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "contain"
-			},
-			"category": ["content"],
-			"platform": "Content Creation",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "",
-			"homepage": "https://instagram.com/moviepartx",
-			"language": "Instagram",
-			"stars": 0,
-			"forks": 0,
-			"requirements": "Any modern browser",
-			"features": [
-				"Concise movie and TV series summaries",
-				"Interesting trivia and behind-the-scenes facts",
-				"Then vs now and cast comparison content",
-				"Curated watchlists across genres and eras",
-				"Quick recommendations for your next watch",
-				"Actor spotlights and filmography highlights",
-				"Simple, engaging, and easy-to-consume cinema content"
-			],
-			"socials": {
-				"instagram": "https://www.instagram.com/moviepartx",
-				"youtube": "https://www.youtube.com/@moviepartx",
-				"tiktok": "https://www.tiktok.com/@moviepartx"
-			},
-			"screenshots": [
-				"/icons/moviepartxinsta.png",
-				"/icons/moviepartxyoutube.png"
-			]
-		},
-		{
-			"id": "barisgunduz",
-			"name": "Barış Gündüz",
-			"featured": true,
-			"subtitle": "YouTube content on AI, software, storytelling, and digital products.",
-			"description": "A creator channel exploring software, artificial intelligence, digital products, content systems, and modern media workflows through both short-form and long-form videos.",
-			"longDescription": "Barış Gündüz is a computer engineer creating content around software, artificial intelligence, digital products, and content production. On this channel, he shares experiments, lessons, and practical insights from building, testing, and growing his own ideas. The content goes beyond simply turning on a camera and talking. It focuses on how an idea becomes a compelling story, how AI can support that process, and how software can strengthen creative production workflows. If you are interested in content creation, storytelling, AI tools, software development, digital product building, and digital media, this channel is designed to give you both strategic perspective and practical takeaways.",
-			"icon": "/screenshots/barisgunduz/logo03.png",
-			"iconStyle": {
-				"scale": 0.9,
-				"objectFit": "contain"
-			},
-			"category": ["content"],
-			"platform": "Content Creation",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "",
-			"homepage": "https://www.youtube.com/@barisgunduz",
-			"language": "YouTube",
-			"stars": 0,
-			"forks": 0,
-			"requirements": "Any modern browser",
-			"features": [
-				"Content creation workflows for both short-form and long-form video",
-				"YouTube growth strategy and audience-building insights",
-				"Storytelling frameworks for more engaging digital content",
-				"Practical AI tools for research, scripting, editing, and ideation",
-				"Software development and product-building lessons from real projects",
-				"Digital product thinking for creators and builders",
-				"Social media strategy and content marketing perspectives",
-				"Productivity systems and repeatable creative workflows"
-			],
-			"socials": {
-				"youtube": "https://www.youtube.com/@barisgunduz",
-				"instagram": "https://www.instagram.com/iambarisgunduz",
-				"x": "https://x.com/iambarisgunduz"
-			},
-			"screenshots": [
-				"/screenshots/barisgunduz/barisgunduz-youtube.png",
-				"/screenshots/barisgunduz/barisgunduz-instagram.png"
-			]
-		},
-		{
-			"id": "substrack",
-			"name": "Substrack",
-			"featured": true,
-			"subtitle": "A simple mobile subscription tracking app.",
-			"description": "Track your subscriptions, see upcoming renewals, review monthly spending, enable billing reminders, and keep everything organized locally on your device.",
-			"longDescription": "Substrack helps you keep track of recurring subscriptions in one simple, organized place. You can add subscriptions, set prices and billing dates, see what renews next, and understand how much you spend each month and year. The app is designed to make recurring payments easier to follow without requiring an account, ads, analytics tracking, or a complicated setup. Substrack stores your subscription data locally on your device and uses exchange rates to help display totals in your selected currency, continuing with default values when exchange rates are unavailable.",
-			"icon": "/icons/Substrack-Logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "cover",
-				"borderRadius": "22%"
-			},
-			"category": ["mobile"],
-			"platform": "iOS",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "https://github.com/barisgunduz/subscription-tracker",
-			"homepage": "https://apps.apple.com/tr/app/substrack-payment-tracker/id6775582144",
-			"language": "React Native",
-			"stars": 0,
-			"forks": 0,
-			"brew": "",
-			"downloadUrl": "",
-			"requirements": "iPhone",
-			"features": [
-				"Track active and paused subscriptions",
-				"Add custom subscriptions or choose from built-in services",
-				"View upcoming payments and renewal dates",
-				"See monthly and yearly spending totals",
-				"Review category-based spending insights",
-				"Choose your display currency",
-				"Enable local billing reminders",
-				"Export subscription data as JSON, CSV, or PDF",
-				"Use light or dark theme",
-				"Keep subscription data stored locally on your device",
-				"Use the app without an account, ads, or analytics tracking"
-			],
-			"screenshots": [
-				"/screenshots/substrack/Substrack-ss-1.png",
-				"/screenshots/substrack/Substrack-ss-2.png",
-				"/screenshots/substrack/Substrack-ss-3.png",
-				"/screenshots/substrack/Substrack-ss-4.png"
-			]
-		},
-		{
-			"id": "donit",
-			"name": "Donit",
-			"featured": true,
-			"subtitle": "A daily task app that turns your day into a winning streak.",
-			"description": "Add your tasks for today, check them off before the day ends, and win the day. Consecutive wins build a streak. One question, every day.",
-			"longDescription": "Donit keeps it simple: every day, you write down what you're going to do and check it off before midnight. Complete everything and you win the day. Win enough days in a row and you build a streak. Every win adds to it — every miss resets it, unless you have a Streak Shield. The Streak Shield is your safety net. Every new user starts with one free. When life gets in the way, it absorbs the loss and keeps your streak alive. Additional shields are available as a one-time purchase — no subscription, ever. Donit requires no account, no login, and no internet connection. Everything stays on your device. Reach 10, 30, 60, 90, or 120 days and Donit marks the moment with a shareable milestone card.",
-			"icon": "/icons/Donit-Logo.png",
-			"iconStyle": {
-				"scale": 1,
-				"objectFit": "cover",
-				"borderRadius": "22%"
-			},
-			"category": ["mobile"],
-			"platform": "iOS",
-			"owner": "Barış Gündüz",
-			"contactMail": "baris@gunduzmedya.com",
-			"price": "Free",
-			"github": "",
-			"homepage": "https://apps.apple.com/app/donit-daily-task-streak/id6784606397",
-			"language": "React Native",
-			"stars": 0,
-			"forks": 0,
-			"brew": "",
-			"downloadUrl": "",
-			"requirements": "iPhone",
-			"features": [
-				"Add tasks for today and check them off before the day ends",
-				"Win the day when all tasks are completed",
-				"Build a streak with consecutive daily wins",
-				"Use a Streak Shield to protect your streak when you miss a day",
-				"Every new user starts with one free Streak Shield",
-				"Purchase additional shields as a one-time in-app purchase",
-				"Track your streak history and activity grid",
-				"View current and longest streak stats",
-				"Unlock milestones at 10, 30, 60, 90, and 120 days",
-				"Share milestone cards at every 30-day mark",
-				"Available in English, Turkish, German, and Spanish",
-				"No account, no login, no internet connection required",
-				"All data stored locally on your device"
-			],
-			"screenshots": [
-				"/screenshots/donit/Donit-ss-1.png",
-				"/screenshots/donit/Donit-ss-2.png",
-				"/screenshots/donit/Donit-ss-3.png",
-				"/screenshots/donit/Donit-ss-4.png",
-				"/screenshots/donit/Donit-ss-5.png"
-			]
-		}
-	]
+  "$schema": "https://wvw.dev/apps.schema.json",
+  "store": {
+    "name": "BG Hub",
+    "owner": "Barış Gündüz",
+    "developer": "Barış Gündüz",
+    "tagline": "My precious apps",
+    "url": "https://hub.barisgunduz.com",
+    "github": "https://github.com/barisgunduz",
+    "linkedin": "https://www.linkedin.com/in/barisgunduz/",
+    "medium": "https://barisgunduz.medium.com/",
+    "blog": "https://www.barisgunduz.com/"
+  },
+  "featured": [
+    {
+      "id": "moviepartx",
+      "headline": "Magical World of Cinema",
+      "title": "Unlimited movie and series content!",
+      "subtitle": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world."
+    },
+    {
+      "id": "teenytinyweb",
+      "headline": "Teeny Tiny Web",
+      "title": "Small but Mighty Dev Resources.",
+      "subtitle": "A little bit of everything, right in the middle."
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Apps"
+    },
+    {
+      "id": "web",
+      "name": "Web Apps"
+    },
+    {
+      "id": "developer-tools",
+      "name": "Developer Tools"
+    },
+    {
+      "id": "chrome-extensions",
+      "name": "Chrome Extensions"
+    },
+    {
+      "id": "games",
+      "name": "Games"
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile Apps"
+    },
+    {
+      "id": "content",
+      "name": "Content Creation"
+    }
+  ],
+  "apps": [
+    {
+      "id": "teenytinyweb",
+      "name": "Teeny Tiny Web",
+      "featured": false,
+      "subtitle": "Small but Mighty Dev Resources.",
+      "description": "A little bit of everything, right in the middle web tools, files, helpers etc...",
+      "longDescription": "Teeny Tiny Web is a compact hub built around the idea that the best developer resources don’t need to be big or complicated to be useful. With the motto “Small but Mighty Dev Resources,” the platform brings together a little bit of everything - practical web tools, helpful utilities, handy files, and simple developer helpers - all in one place. Designed to sit right in the middle of everyday workflows, Teeny Tiny Web focuses on speed, simplicity, and usefulness, giving developers quick access to the small resources that make a big difference in daily development.",
+      "icon": "/icons/teenytinyweb-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "web"
+      ],
+      "platform": "Web",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "https://github.com/barisgunduz/teeny-tiny-web",
+      "homepage": "https://teeny-tiny-web.vercel.app/",
+      "language": "NextJS",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "Any modern browser",
+      "features": [
+        "Tools: A growing collection of free online developer tools",
+        "Projects: Real-world mini projects demonstrating essential web development concepts",
+        "Docs: Concise guides and tutorials covering development best practices",
+        "Roadmaps: Step-by-step learning paths for various developer roles",
+        "Dummy Data Generator: Generate realistic mock data for testing APIs and front-end applications",
+        "Freebies: A collection of downloadable resources such as PDFs, templates, and more."
+      ],
+      "screenshots": [
+        "/icons/teenytinyweb.png"
+      ]
+    },
+    {
+      "id": "checkdonehub",
+      "name": "Check Done Hub",
+      "featured": false,
+      "subtitle": "Small but Mighty Dev Resources.",
+      "description": "Check Done Hub is a minimalist to-do list app that helps you stay organized with zero fuss.",
+      "longDescription": "Check Done App is designed to be the simplest and most straightforward to-do list manager available. With Check Done Hub, you can effortlessly manage your tasks without any unnecessary complications. This extension provides a clean and intuitive interface, allowing you to focus solely on completing your tasks.",
+      "icon": "/icons/checkdonehub-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "chrome-extensions"
+      ],
+      "platform": "Chrome",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "https://github.com/Gunduz-Medya/checkdonehub",
+      "homepage": "https://chromewebstore.google.com/detail/check-done-hub/ebfkafokilbffgfoemfefbkhhdikiiip",
+      "language": "React JS",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "Any modern browser",
+      "features": [
+        "Simplicity First: No complex settings or additional information required—just a straightforward to-do list.",
+        "Easy Task Management: Quickly add, edit, and remove tasks with a user-friendly interface.",
+        "No Sign-Up Needed: Start using the app instantly without any account setup or login.",
+        "Minimalist Design: Focus on what matters most with a clutter-free, distraction-free design."
+      ],
+      "screenshots": [
+        "/icons/checkdonehub.png"
+      ]
+    },
+    {
+      "id": "protasktimer",
+      "name": "Pro Task Timer",
+      "featured": false,
+      "subtitle": "A task-based time tracking Chrome extension.",
+      "description": "Simplify task management and optimize your productivity with precise time tracking.",
+      "longDescription": "ProTaskTimer is a user-friendly Chrome extension designed to help you efficiently track time spent on tasks, manage your daily workload, and boost productivity. With ProTaskTimer, you can effortlessly monitor your progress and export daily task reports with a single click.",
+      "icon": "/icons/protasktimer-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "chrome-extensions"
+      ],
+      "platform": "Chrome",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "https://github.com/Gunduz-Medya/protasktimer",
+      "homepage": "https://chromewebstore.google.com/detail/protasktimer/ldkggagkkfagekoodligfapmnjnokmli",
+      "language": "React JS",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "Any modern browser",
+      "features": [
+        "Task-Based Tracking: Easily start and stop task timers to track your productivity with precision.",
+        "Persistent Task List: Your tasks and timers are saved automatically, even when you close the popup or browser.",
+        "Export Daily Reports: Download your daily task summary as a CSV file for easy reporting and analysis.",
+        "Minimalist Design: Clean and intuitive interface, ensuring focus on productivity without unnecessary distractions.",
+        "Clear Task Management: Quickly clear completed tasks and start fresh with a single click."
+      ],
+      "screenshots": [
+        "/icons/protasktimer.png"
+      ]
+    },
+    {
+      "id": "passaroo",
+      "name": "Passaroo - Password Generator",
+      "featured": false,
+      "subtitle": "Simplify the process of creating strong and reliable passwords.",
+      "description": "easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
+      "longDescription": "Passaroo is a secure and customizable password generator extension designed to simplify the process of creating strong and reliable passwords. With Passaroo, you can easily generate complex passwords tailored to your needs and instantly copy them to your clipboard.",
+      "icon": "/icons/passaroo-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "chrome-extensions"
+      ],
+      "platform": "Chrome",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "https://github.com/Gunduz-Medya/passaroo",
+      "homepage": "https://chromewebstore.google.com/detail/passaroo-password-generat/pgfpklgdcmbiijdddcdddiieiobicmek",
+      "language": "React JS",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "Any modern browser",
+      "features": [
+        "Customizable Password Length: Choose the length of your password, from 6 to 50 characters.",
+        "Character Set Options: Select the inclusion of uppercase letters, numbers, and special characters to enhance password strength.",
+        "Instant Copy to Clipboard: Generate and copy your password to the clipboard with just a click.",
+        "Minimalist Design: A simple, elegant interface that allows you to focus solely on creating secure passwords without distractions."
+      ],
+      "screenshots": [
+        "/icons/passaroo.png"
+      ]
+    },
+    {
+      "id": "vaktindeye",
+      "name": "Vaktinde Ye",
+      "featured": true,
+      "subtitle": "Healthy lifestyle content in Turkish",
+      "description": "A content platform focused on healthy lifestyle topics, providing articles, tips, and resources in Turkish.",
+      "longDescription": "Vaktinde Ye is a content platform dedicated to promoting a healthy lifestyle through informative articles, practical tips, and valuable resources. The platform covers a wide range of topics including nutrition, fitness, mental well-being, and overall wellness. All content is provided in Turkish, making it accessible to a broad audience in Turkey. Whether you're looking for healthy recipes, workout routines, or advice on maintaining mental health, Vaktinde Ye offers a comprehensive resource for anyone interested in improving their lifestyle.",
+      "icon": "/icons/vaktindeye-logo.jpeg",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "contain"
+      },
+      "category": [
+        "content"
+      ],
+      "platform": "Content Creation",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "",
+      "homepage": "https://www.vaktindeye.com",
+      "language": "Wordpress",
+      "stars": 0,
+      "forks": 0,
+      "requirements": "Any modern browser",
+      "features": [
+        "Healthy eating guides and practical nutrition tips",
+        "Science-based fitness and wellness content",
+        "Daily motivation for a disciplined lifestyle",
+        "Easy-to-follow meal and habit suggestions",
+        "Actionable advice for sustainable health habits",
+        "Community-focused healthy living inspiration",
+        "Simple, practical, and realistic wellness strategies"
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/vaktindeye"
+      },
+      "screenshots": [
+        "/icons/vaktindeye.png"
+      ]
+    },
+    {
+      "id": "moviepartx",
+      "name": "Movie Part X",
+      "featured": true,
+      "subtitle": "Movie and series content in English",
+      "description": "A content platform focused on movies and TV series, providing summaries, trivia, and recommendations in English.",
+      "longDescription": "Movie Part X is a content platform dedicated to sharing engaging and informative posts about films and television series from around the world. The platform covers a wide range of content including movie summaries, character insights, behind-the-scenes facts, and curated watch recommendations. All content is presented in English, making it accessible to a global audience of movie enthusiasts. Whether you're searching for your next binge-worthy series, revisiting classic films, or discovering interesting details about your favorite actors and stories, Movie Part X offers a comprehensive resource for anyone passionate about cinema and television.",
+      "icon": "/icons/moviepartx-logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "contain"
+      },
+      "category": [
+        "content"
+      ],
+      "platform": "Content Creation",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "",
+      "homepage": "https://instagram.com/moviepartx",
+      "language": "Instagram",
+      "stars": 0,
+      "forks": 0,
+      "requirements": "Any modern browser",
+      "features": [
+        "Concise movie and TV series summaries",
+        "Interesting trivia and behind-the-scenes facts",
+        "Then vs now and cast comparison content",
+        "Curated watchlists across genres and eras",
+        "Quick recommendations for your next watch",
+        "Actor spotlights and filmography highlights",
+        "Simple, engaging, and easy-to-consume cinema content"
+      ],
+      "socials": {
+        "instagram": "https://www.instagram.com/moviepartx",
+        "youtube": "https://www.youtube.com/@moviepartx",
+        "tiktok": "https://www.tiktok.com/@moviepartx"
+      },
+      "screenshots": [
+        "/icons/moviepartxinsta.png",
+        "/icons/moviepartxyoutube.png"
+      ]
+    },
+    {
+      "id": "barisgunduz",
+      "name": "Barış Gündüz",
+      "featured": true,
+      "subtitle": "YouTube content on AI, software, storytelling, and digital products.",
+      "description": "A creator channel exploring software, artificial intelligence, digital products, content systems, and modern media workflows through both short-form and long-form videos.",
+      "longDescription": "Barış Gündüz is a computer engineer creating content around software, artificial intelligence, digital products, and content production. On this channel, he shares experiments, lessons, and practical insights from building, testing, and growing his own ideas. The content goes beyond simply turning on a camera and talking. It focuses on how an idea becomes a compelling story, how AI can support that process, and how software can strengthen creative production workflows. If you are interested in content creation, storytelling, AI tools, software development, digital product building, and digital media, this channel is designed to give you both strategic perspective and practical takeaways.",
+      "icon": "/screenshots/barisgunduz/logo03.png",
+      "iconStyle": {
+        "scale": 0.9,
+        "objectFit": "contain"
+      },
+      "category": [
+        "content"
+      ],
+      "platform": "Content Creation",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "",
+      "homepage": "https://www.youtube.com/@barisgunduz",
+      "language": "YouTube",
+      "stars": 0,
+      "forks": 0,
+      "requirements": "Any modern browser",
+      "features": [
+        "Content creation workflows for both short-form and long-form video",
+        "YouTube growth strategy and audience-building insights",
+        "Storytelling frameworks for more engaging digital content",
+        "Practical AI tools for research, scripting, editing, and ideation",
+        "Software development and product-building lessons from real projects",
+        "Digital product thinking for creators and builders",
+        "Social media strategy and content marketing perspectives",
+        "Productivity systems and repeatable creative workflows"
+      ],
+      "socials": {
+        "youtube": "https://www.youtube.com/@barisgunduz",
+        "instagram": "https://www.instagram.com/iambarisgunduz",
+        "x": "https://x.com/iambarisgunduz"
+      },
+      "screenshots": [
+        "/screenshots/barisgunduz/barisgunduz-youtube.png",
+        "/screenshots/barisgunduz/barisgunduz-instagram.png"
+      ]
+    },
+    {
+      "id": "substrack",
+      "name": "Substrack",
+      "featured": true,
+      "subtitle": "A simple mobile subscription tracking app.",
+      "description": "Track your subscriptions, see upcoming renewals, review monthly spending, enable billing reminders, and keep everything organized locally on your device.",
+      "longDescription": "Substrack helps you keep track of recurring subscriptions in one simple, organized place. You can add subscriptions, set prices and billing dates, see what renews next, and understand how much you spend each month and year. The app is designed to make recurring payments easier to follow without requiring an account, ads, analytics tracking, or a complicated setup. Substrack stores your subscription data locally on your device and uses exchange rates to help display totals in your selected currency, continuing with default values when exchange rates are unavailable.",
+      "icon": "/icons/Substrack-Logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "mobile"
+      ],
+      "platform": "iOS",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "https://github.com/barisgunduz/subscription-tracker",
+      "homepage": "https://apps.apple.com/tr/app/substrack-payment-tracker/id6775582144",
+      "language": "React Native",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "iPhone",
+      "features": [
+        "Track active and paused subscriptions",
+        "Add custom subscriptions or choose from built-in services",
+        "View upcoming payments and renewal dates",
+        "See monthly and yearly spending totals",
+        "Review category-based spending insights",
+        "Choose your display currency",
+        "Enable local billing reminders",
+        "Export subscription data as JSON, CSV, or PDF",
+        "Use light or dark theme",
+        "Keep subscription data stored locally on your device",
+        "Use the app without an account, ads, or analytics tracking"
+      ],
+      "screenshots": [
+        "/screenshots/substrack/Substrack-ss-1.png",
+        "/screenshots/substrack/Substrack-ss-2.png",
+        "/screenshots/substrack/Substrack-ss-3.png",
+        "/screenshots/substrack/Substrack-ss-4.png"
+      ]
+    },
+    {
+      "id": "donit",
+      "name": "Donit",
+      "featured": true,
+      "subtitle": "A daily task app that turns your day into a winning streak.",
+      "description": "Add your tasks for today, check them off before the day ends, and win the day. Consecutive wins build a streak. One question, every day.",
+      "longDescription": "Donit keeps it simple: every day, you write down what you're going to do and check it off before midnight. Complete everything and you win the day. Win enough days in a row and you build a streak. Every win adds to it — every miss resets it, unless you have a Streak Shield. The Streak Shield is your safety net. Every new user starts with one free. When life gets in the way, it absorbs the loss and keeps your streak alive. Additional shields are available as a one-time purchase — no subscription, ever. Donit requires no account, no login, and no internet connection. Everything stays on your device. Reach 10, 30, 60, 90, or 120 days and Donit marks the moment with a shareable milestone card.",
+      "icon": "/icons/Donit-Logo.png",
+      "iconStyle": {
+        "scale": 1,
+        "objectFit": "cover",
+        "borderRadius": "22%"
+      },
+      "category": [
+        "mobile"
+      ],
+      "platform": "iOS",
+      "owner": "Barış Gündüz",
+      "contactMail": "baris@gunduzmedya.com",
+      "price": "Free",
+      "github": "",
+      "homepage": "https://apps.apple.com/app/donit-daily-task-streak/id6784606397",
+      "language": "React Native",
+      "stars": 0,
+      "forks": 0,
+      "brew": "",
+      "downloadUrl": "",
+      "requirements": "iPhone",
+      "features": [
+        "Add tasks for today and check them off before the day ends",
+        "Win the day when all tasks are completed",
+        "Build a streak with consecutive daily wins",
+        "Use a Streak Shield to protect your streak when you miss a day",
+        "Every new user starts with one free Streak Shield",
+        "Purchase additional shields as a one-time in-app purchase",
+        "Track your streak history and activity grid",
+        "View current and longest streak stats",
+        "Unlock milestones at 10, 30, 60, 90, and 120 days",
+        "Share milestone cards at every 30-day mark",
+        "Available in English, Turkish, German, and Spanish",
+        "No account, no login, no internet connection required",
+        "All data stored locally on your device"
+      ],
+      "screenshots": [
+        "/screenshots/donit/Donit-ss-1.png",
+        "/screenshots/donit/Donit-ss-2.png",
+        "/screenshots/donit/Donit-ss-3.png",
+        "/screenshots/donit/Donit-ss-4.png",
+        "/screenshots/donit/Donit-ss-5.png"
+      ]
+    }
+  ]
 }
