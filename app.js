@@ -174,6 +174,10 @@
     return app.price && app.price !== "Free" && app.price !== "free";
   }
 
+  function isComingSoon(app) {
+    return app.comingSoon === true;
+  }
+
   function getBuyUrl(app) {
     return app.buyUrl || app.homepage || app.github;
   }
@@ -225,6 +229,7 @@
 
   function appRow(app) {
     const primaryCategory = getPrimaryCategory(app);
+    const comingSoon = isComingSoon(app);
     return `
       <div class="app-row" data-app="${app.id}">
         <div class="app-icon"${iconContainerStyle(app)}>${renderIcon(app)}</div>
@@ -235,10 +240,11 @@
           <div class="app-subtitle">${app.subtitle}</div>
           <div class="app-meta">
             <span class="app-meta-tag app-meta-tag-${primaryCategory}">${app.platform}</span>
+            ${comingSoon ? `<span class="coming-soon-badge">Coming Soon</span>` : ""}
             ${app.stars ? starBadge(app.stars) : ""}
           </div>
         </div>
-        <button class="get-btn${isPaidApp(app) ? " buy-btn" : ""}" data-action="get" data-app="${app.id}">${getButtonLabel(app)}</button>
+        ${comingSoon ? "" : `<button class="get-btn${isPaidApp(app) ? " buy-btn" : ""}" data-action="get" data-app="${app.id}">${getButtonLabel(app)}</button>`}
       </div>`;
   }
 
@@ -441,15 +447,18 @@
           <div class="app-detail-title-area">
             <div class="app-detail-title">${app.name}</div>
             <div class="app-detail-subtitle">${app.subtitle}</div>
+            ${isComingSoon(app) ? `<div class="coming-soon-note">🚧 Coming soon. This project is still in development and not yet available.</div>` : ""}
+            ${isComingSoon(app) && !hasGithubLink(app) ? "" : `
             <div class="app-detail-actions">
+              ${isComingSoon(app) ? "" : `
               <button class="app-detail-get-btn${isPaidApp(app) ? " buy-btn" : ""}" data-action="get" data-app="${app.id}">
                 ${getButtonLabel(app)}
-              </button>
+              </button>`}
               ${hasGithubLink(app) ? `
               <a href="${app.github}" target="_blank" rel="noopener" class="github-link">
                 ${icons.github} View on GitHub
               </a>` : ""}
-            </div>
+            </div>`}
           </div>
         </div>
 
@@ -457,9 +466,9 @@
         <div class="app-detail-stats">
           ${shouldShowGithubStat(app, "stars") ? `<div class="stat"><div class="stat-value">${formatNumber(app.stars)}</div><div class="stat-label">Stars</div></div>` : ""}
           ${shouldShowGithubStat(app, "forks") ? `<div class="stat"><div class="stat-value">${formatNumber(app.forks)}</div><div class="stat-label">Forks</div></div>` : ""}
-          <div class="stat"><div class="stat-value">${app.price}</div><div class="stat-label">Price</div></div>
+          ${app.price ? `<div class="stat"><div class="stat-value">${app.price}</div><div class="stat-label">Price</div></div>` : ""}
           <div class="stat"><div class="stat-value">${app.platform}</div><div class="stat-label">Platform</div></div>
-          <div class="stat"><div class="stat-value">${app.language}</div><div class="stat-label">Language</div></div>
+          ${app.language ? `<div class="stat"><div class="stat-value">${app.language}</div><div class="stat-label">Language</div></div>` : ""}
         </div>`}
 
         ${app.screenshots && app.screenshots.length > 0 ? `
@@ -528,11 +537,12 @@
               <span class="info-label">Compatibility</span>
               <span class="info-value">${app.requirements}</span>
             </div>
-            ${hideContentMeta ? "" : `
+            ${hideContentMeta || !app.language ? "" : `
             <div class="info-item">
               <span class="info-label">Language</span>
               <span class="info-value">${app.language}</span>
-            </div>
+            </div>`}
+            ${hideContentMeta || !app.price ? "" : `
             <div class="info-item">
               <span class="info-label">Price</span>
               <span class="info-value">${app.price}</span>

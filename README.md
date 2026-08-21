@@ -6,7 +6,7 @@
 
 <p align="center">
   <em>My precious apps.</em><br>
-  An App Store-inspired catalog for your projects — powered by a single JSON file.
+  An App Store-inspired catalog for your projects, powered by a single JSON file.
 </p>
 
 <p align="center">
@@ -17,19 +17,19 @@
 
 ---
 
-BG Hub (<a href="https://github.com/f/appetit">Originally Appétit</a>) is a beautiful, browsable app catalog that looks and feels like the Apple App Store. It's built entirely with vanilla HTML, CSS, and JS — no frameworks, no build step, no dependencies. Just edit `apps.json` and deploy.
+BG Hub (<a href="https://github.com/f/appetit">Originally Appétit</a>) is a beautiful, browsable app catalog that looks and feels like the Apple App Store. It's built entirely with vanilla HTML, CSS, and JS: no frameworks, no build step, no dependencies. Just edit `apps.json` and deploy.
 
 ## Features
 
-- **App Store UI** — Sidebar navigation, featured carousel, app cards, detail pages with screenshots
-- **Dark & Light themes** — System preference detection with manual toggle, persisted in localStorage
-- **JSON-driven** — All apps, categories, and featured items defined in a single `apps.json`
-- **Install modals** — `brew install` and `npx` commands with one-click copy to clipboard
-- **Categories** — macOS, Web, CLI, Developer Tools, Productivity (or define your own)
-- **Search** — Instant client-side filtering across names, descriptions, and features
-- **GitHub stats** — Live star and fork counts, updatable with the included `update-stats.sh` script
-- **Responsive** — Desktop sidebar collapses on mobile
-- **Zero dependencies** — Pure HTML/CSS/JS, deploys anywhere as static files
+- **App Store UI**: Sidebar navigation, featured carousel, app cards, detail pages with screenshots
+- **Dark & Light themes**: System preference detection with manual toggle, persisted in localStorage
+- **JSON-driven**: All apps, categories, and featured items defined in a single `apps.json`
+- **Install modals**: `brew install` and `npx` commands with one-click copy to clipboard
+- **Categories**: macOS, Web, CLI, Developer Tools, Productivity (or define your own)
+- **Search**: Instant client-side filtering across names, descriptions, and features
+- **GitHub stats**: Live star and fork counts, updatable with the included `update-stats.sh` script
+- **Responsive**: Desktop sidebar collapses on mobile
+- **Zero dependencies**: Pure HTML/CSS/JS, deploys anywhere as static files
 
 ## Quick Start
 
@@ -100,7 +100,7 @@ Edit `apps.json`. Each app entry supports:
 
 ### 4. Deploy
 
-Push to GitHub and enable Pages — or drop the files on any static host (Netlify, Vercel, Cloudflare Pages, S3, etc).
+Push to GitHub and enable Pages, or drop the files on any static host (Netlify, Vercel, Cloudflare Pages, S3, etc).
 
 ## Update GitHub Stats
 
@@ -122,7 +122,7 @@ GITHUB_TOKEN=ghp_xxx ./update-stats.sh
 ├── index.html          Main HTML shell
 ├── style.css           All styles (dark + light themes)
 ├── app.js              Routing, rendering, carousel, modals
-├── apps.json           All app data — edit this file
+├── apps.json           All app data, edit this file
 ├── logo.svg            App icon / favicon
 ├── update-stats.sh     Fetches GitHub stars/forks into apps.json
 ├── CNAME               Custom domain for GitHub Pages

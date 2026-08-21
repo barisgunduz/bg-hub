@@ -991,6 +991,32 @@ body {
   transform: scale(0.95);
 }
 
+/* Coming Soon */
+.coming-soon-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ff9500;
+  background: rgba(255, 149, 0, 0.14);
+  border: 1px solid rgba(255, 149, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.coming-soon-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff9500;
+  background: rgba(255, 149, 0, 0.12);
+  border: 1px solid rgba(255, 149, 0, 0.28);
+  border-radius: 100px;
+}
+
 /* Buy Button */
 .buy-btn.get-btn,
 .buy-btn.featured-get-btn {
